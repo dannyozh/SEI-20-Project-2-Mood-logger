@@ -64,8 +64,11 @@ const userFeeling = savingFeelings(pool);
 
 // saving feelings part 2
 
-const savingLog = require('./models/dashboard2saved');
-const userLog = savingLog(pool);
+// finding currentcard
+const retrievingCard = require('./models/gettingLogDetails');
+const cardFinder = retrievingCard(pool);
+// const savingLog = require('./models/dashboard2saved');
+// const userLog = savingLog(pool);
 
 /*
  * ===================================================
@@ -95,5 +98,5 @@ module.exports = {
 	// users: userModelsObject,
 	user: user,
 	userFeeling: userFeeling,
-	userLog: userLog
+	cardFinder: cardFinder
 };

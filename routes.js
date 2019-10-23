@@ -15,6 +15,7 @@ module.exports = (app, allModels) => {
 	const dashboardControllerCallbacks = require('./controllers/dashboard')(allModels);
 	app.get('/dashboardnew', dashboardControllerCallbacks.createDashboard);
 	app.post('/dashboardsave', dashboardControllerCallbacks.saveFeeling);
-	app.get('/dashboardlogs', dashboardControllerCallbacks.createLogs);
-	app.post('/logsaved', dashboardControllerCallbacks.saveLogs);
+	// app.get('/dashboardlogs', dashboardControllerCallbacks.createLogs);
+	// app.post('/logsaved', dashboardControllerCallbacks.saveLogs);
+	app.get('/seecurrentcard', dashboardControllerCallbacks.locatingCurrentCard);
 };

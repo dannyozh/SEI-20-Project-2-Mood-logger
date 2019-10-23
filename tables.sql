@@ -9,34 +9,11 @@ CREATE TABLE
 IF NOT EXISTS dailylogs
 (
     id SERIAL PRIMARY KEY,
-    users_id INTEGER,
+    users_name TEXT,
     mood_level INTEGER,
-    illness_id INTEGER
-);
-
-CREATE TABLE
-IF NOT EXISTS dailylogs
-(
-    id SERIAL PRIMARY KEY,
-    user_name TEXT,
-    diagnosis_id INTEGER,
-    logs_id INTEGER
-);
-
-CREATE TABLE
-IF NOT EXISTS diagnosis
-(
-    id SERIAL PRIMARY KEY,
-    feeling TEXT,
-    mood_level INTEGER
-);
-
-CREATE TABLE
-IF NOT EXISTS logs
-(
-    id SERIAL PRIMARY KEY,
-    name TEXT,
-    log TEXT
+    illness_input TEXT,
+    log TEXT,
+    date TEXT
 );
 
 
