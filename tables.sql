@@ -1,0 +1,37 @@
+CREATE TABLE
+IF NOT EXISTS users
+(
+    id SERIAL PRIMARY KEY,
+    name TEXT
+);
+
+CREATE TABLE
+IF NOT EXISTS dailylogs
+(
+    id SERIAL PRIMARY KEY,
+    users_id INTEGER,
+    mood_level INTEGER,
+    illness_id INTEGER
+);
+
+CREATE TABLE
+IF NOT EXISTS illness
+(
+    id SERIAL PRIMARY KEY,
+    name TEXT
+);
+
+CREATE TABLE
+IF NOT EXISTS users_forums
+(
+    id SERIAL PRIMARY KEY,
+    users_id INTEGER,
+    forums_id INTEGER
+);
+
+CREATE TABLE
+IF NOT EXISTS forums
+(
+    id SERIAL PRIMARY KEY,
+    name TEXT
+);
