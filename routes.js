@@ -10,4 +10,11 @@ module.exports = (app, allModels) => {
 	const loginControllerCallbacks = require('./controllers/login')(allModels);
 	app.get('/login', loginControllerCallbacks.userLogin);
 	app.post('/loginsuccess', loginControllerCallbacks.userLoginSuccess);
+
+	// user dashboard
+	const dashboardControllerCallbacks = require('./controllers/dashboard')(allModels);
+	app.get('/dashboardnew', dashboardControllerCallbacks.createDashboard);
+	app.post('/dashboardsave', dashboardControllerCallbacks.saveFeeling);
+	app.get('/dashboardlogs', dashboardControllerCallbacks.createLogs);
+	app.post('/logsaved', dashboardControllerCallbacks.saveLogs);
 };

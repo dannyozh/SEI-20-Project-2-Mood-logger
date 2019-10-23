@@ -58,6 +58,15 @@ pool.on('error', function(err) {
 const registerUser = require('./models/register');
 const user = registerUser(pool);
 
+// saving feelings part 1
+const savingFeelings = require('./models/dashboard1saved');
+const userFeeling = savingFeelings(pool);
+
+// saving feelings part 2
+
+const savingLog = require('./models/dashboard2saved');
+const userLog = savingLog(pool);
+
 /*
  * ===================================================
  * ===================================================
@@ -84,5 +93,7 @@ module.exports = {
    */
 
 	// users: userModelsObject,
-	user: user
+	user: user,
+	userFeeling: userFeeling,
+	userLog: userLog
 };

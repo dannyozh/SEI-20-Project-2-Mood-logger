@@ -20,7 +20,7 @@ module.exports = (db) => {
 		let registeredPassword = request.cookies.password;
 		if (userLoginInfo.username === registeredUsername && hashedPassword === registeredPassword) {
 			console.log('success!');
-			response.send('login success!');
+			response.redirect('/dashboardnew');
 			// db.user.registerUserSuccess(userRegistrationInfo, (error, result) => {
 		} else {
 			console.log('loginfail');

@@ -15,11 +15,30 @@ IF NOT EXISTS dailylogs
 );
 
 CREATE TABLE
-IF NOT EXISTS illness
+IF NOT EXISTS dailylogs
 (
     id SERIAL PRIMARY KEY,
-    name TEXT
+    user_name TEXT,
+    diagnosis_id INTEGER,
+    logs_id INTEGER
 );
+
+CREATE TABLE
+IF NOT EXISTS diagnosis
+(
+    id SERIAL PRIMARY KEY,
+    feeling TEXT,
+    mood_level INTEGER
+);
+
+CREATE TABLE
+IF NOT EXISTS logs
+(
+    id SERIAL PRIMARY KEY,
+    name TEXT,
+    log TEXT
+);
+
 
 CREATE TABLE
 IF NOT EXISTS users_forums
@@ -33,5 +52,5 @@ CREATE TABLE
 IF NOT EXISTS forums
 (
     id SERIAL PRIMARY KEY,
-    name TEXT
+    names TEXT
 );
