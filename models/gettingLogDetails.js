@@ -6,7 +6,7 @@ module.exports = (dbPoolInstance) => {
 	let findFeeling = (callback) => {
 		console.log('hello models');
 
-		const query1 = `SELECT * FROM dailylogs`;
+		const query1 = `SELECT * FROM dailylogs ORDER BY ID DESC LIMIT 1`;
 
 		dbPoolInstance.query(query1, (error, queryResult) => {
 			if (error) {
