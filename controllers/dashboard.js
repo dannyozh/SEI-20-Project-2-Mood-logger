@@ -48,11 +48,21 @@ module.exports = (db) => {
 
 	let locatingCurrentCard = (request, response) => {
 		// inserting into db, db needs to have a user....
+
 		db.cardFinder.findFeeling((error, result) => {
 			if (error) {
 				console.log('the error is', error);
 			} else {
 				console.log('details retrieved');
+				console.log('this is result', result[0].users_name);
+				const data = {
+					username: result[0].users_name,
+					mood: result[0].mood_level,
+					feeling: result[0].illness_input,
+					log: result[0].log,
+					date: result[0].date
+				};
+				response.render('dashboard/rendercard.jsx', data);
 			}
 		});
 	};
