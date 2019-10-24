@@ -3,6 +3,8 @@ var Navbar = require('../navbar');
 
 class Profile extends React.Component {
 	render() {
+		let moods = this.props.moods;
+		let jData = JSON.stringify(moods);
 		let allcardsArr = this.props.result;
 		let allcards = allcardsArr.map((card) => {
 			return (
@@ -28,8 +30,6 @@ class Profile extends React.Component {
 				</div>
 			);
 		});
-		console.log('allcards', allcards);
-
 		return (
 			<html>
 				<head>
@@ -39,15 +39,26 @@ class Profile extends React.Component {
 						integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 						crossorigin="anonymous"
 					/>
-					<link rel="stylesheet" href="profile.css" />
+					<link rel="stylesheet" href="/profile.css" type="text/css" />
+					<link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js" />
 				</head>
 				<Navbar />
-				<body class="bg-info">
+				<body class="body">
 					<div class="container text-center">
 						<h1 class="header">{this.props.username}'s profile</h1>
 						<hr />
 						<br />
 						<p>{allcards}</p>
+						<div class="container float-left col-md-6">
+							<canvas id="myChart" />
+							<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" />
+							<script
+								dangerouslySetInnerHTML={{
+									__html: `var allmoods = ${jData};`
+								}}
+							/>
+							<script src="/profilechart.js" />
+						</div>
 					</div>
 				</body>
 			</html>
