@@ -14,7 +14,7 @@ module.exports = (db) => {
 
 	let userLoginSuccess = (request, response) => {
 		const userLoginInfo = request.body;
-		let usernamecookie = request.cookies.new_user;
+		let userLoginName = request.body.username;
 		console.log('this is your cookie', usernamecookie);
 		console.log(userLoginInfo);
 		// inserting into db, db needs to have a user....
@@ -30,6 +30,7 @@ module.exports = (db) => {
 				console.log('are we in error?');
 			} else if (userLoginInfo.username === result[0].name && hashedPassword === result[0].password) {
 				console.log('login for second time');
+				response.cookie('user_name', userLoginName);
 				response.redirect('/seecurrentcard');
 			} else {
 				response.redirect('/login');

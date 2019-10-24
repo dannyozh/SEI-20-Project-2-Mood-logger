@@ -14,12 +14,14 @@ module.exports = (db) => {
 
 	let registeredUser = (request, response) => {
 		const userRegistrationInfo = request.body;
+		let userRegistrationUsername = request.body.username;
 		// inserting into db, db needs to have a user....
 		db.user.registerUserSuccess(userRegistrationInfo, (error, result) => {
 			if (error) {
 				console.log(error);
 			} else {
 				console.log('register success!');
+				response.cookie('user_name', userRegistrationUsername);
 				response.redirect('/dashboardnew');
 			}
 		});
