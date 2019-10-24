@@ -58,17 +58,23 @@ pool.on('error', function(err) {
 const registerUser = require('./models/register');
 const user = registerUser(pool);
 
+// finding out if user has account
+const userSearch = require('./models/searchuser');
+const authUser = userSearch(pool);
+
 // saving feelings part 1
 const savingFeelings = require('./models/dashboard1saved');
 const userFeeling = savingFeelings(pool);
-
-// saving feelings part 2
 
 // finding currentcard
 const retrievingCard = require('./models/gettingLogDetails');
 const cardFinder = retrievingCard(pool);
 // const savingLog = require('./models/dashboard2saved');
 // const userLog = savingLog(pool);
+
+// rendering profile
+const retrievingProfileDetails = require('./models/profile');
+const findProfile = retrievingProfileDetails(pool);
 
 /*
  * ===================================================
@@ -98,5 +104,7 @@ module.exports = {
 	// users: userModelsObject,
 	user: user,
 	userFeeling: userFeeling,
-	cardFinder: cardFinder
+	cardFinder: cardFinder,
+	authUser: authUser,
+	findProfile: findProfile
 };

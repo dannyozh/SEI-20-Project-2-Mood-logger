@@ -22,4 +22,8 @@ module.exports = (app, allModels) => {
 	// app.get('/dashboardlogs', dashboardControllerCallbacks.createLogs);
 	// app.post('/logsaved', dashboardControllerCallbacks.saveLogs);
 	app.get('/seecurrentcard', dashboardControllerCallbacks.locatingCurrentCard);
+
+	// user profile
+	const profileControllerCallbacks = require('./controllers/profile')(allModels);
+	app.post('/profile/:username', profileControllerCallbacks.renderProfile);
 };
