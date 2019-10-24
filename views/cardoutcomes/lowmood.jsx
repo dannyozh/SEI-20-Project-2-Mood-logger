@@ -13,10 +13,10 @@ class Lowmood extends React.Component {
 						crossorigin="anonymous"
 					/>
 					<link href="//fonts.googleapis.com/css?family=Lato:400,300,100,700,900" rel="stylesheet" type="text/css" />
-					<link href="cardstyle.css" />
+					<link rel="stylesheet" href="/home.css" type="text/css" />
 				</head>
 				<Navbar />
-				<body class="bg-primary">
+				<body class="body">
 					<div class="container">
 						<h1 class="text-white text-center">Moodlogger</h1>
 						<hr />
@@ -74,6 +74,10 @@ class Lowmood extends React.Component {
 								</div>
 							</div>
 						</div>
+						<br />
+						<form action={'/profile/' + this.props.username} method="POST" class="text-center">
+							<input type="submit" value="To Dashboard!" />
+						</form>
 					</div>
 				</body>
 			</html>

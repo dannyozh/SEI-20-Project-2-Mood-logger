@@ -13,10 +13,10 @@ class Okmood extends React.Component {
 						crossorigin="anonymous"
 					/>
 					<link href="//fonts.googleapis.com/css?family=Lato:400,300,100,700,900" rel="stylesheet" type="text/css" />
-					<link href="cardstyle.css" />
+					<link href="/home.css" />
 				</head>
 				<Navbar />
-				<body class="bg-primary">
+				<body class="body">
 					<div class="container">
 						<h1 class="text-white text-center">Moodlogger</h1>
 						<hr />
@@ -70,6 +70,9 @@ class Okmood extends React.Component {
 								</div>
 							</div>
 						</div>
+						<form action={'/profile/' + this.props.username} method="POST" class="text-center">
+							<input type="submit" value="To Dashboard!" />
+						</form>
 					</div>
 				</body>
 			</html>

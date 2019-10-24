@@ -1,4 +1,5 @@
 var React = require('react');
+var Navbar = require('../navbar');
 
 class Rendercard extends React.Component {
 	render() {
@@ -12,9 +13,10 @@ class Rendercard extends React.Component {
 						crossorigin="anonymous"
 					/>
 					<link href="//fonts.googleapis.com/css?family=Lato:400,300,100,700,900" rel="stylesheet" type="text/css" />
-					<link href="cardstyle.css" />
+					<link href="/home.css" />
 				</head>
-				<body class="bg-primary">
+				<Navbar />
+				<body class="body">
 					<div class="container">
 						<h1 class="text-white text-center">Moodlogger</h1>
 						<hr />
@@ -72,6 +74,9 @@ class Rendercard extends React.Component {
 								</div>
 							</div>
 						</div>
+						<form action={'/profile/' + this.props.username} method="POST" class="text-center">
+							<input type="submit" value="To Dashboard!" />
+						</form>
 					</div>
 				</body>
 			</html>
