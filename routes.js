@@ -14,6 +14,8 @@ module.exports = (app, allModels) => {
 	const loginControllerCallbacks = require('./controllers/login')(allModels);
 	app.get('/login', loginControllerCallbacks.userLogin);
 	app.post('/loginsuccess', loginControllerCallbacks.userLoginSuccess);
+	// logout user
+	app.get('/logout', loginControllerCallbacks.userLogout);
 
 	// user dashboard
 	const dashboardControllerCallbacks = require('./controllers/dashboard')(allModels);
@@ -25,5 +27,7 @@ module.exports = (app, allModels) => {
 
 	// user profile
 	const profileControllerCallbacks = require('./controllers/profile')(allModels);
+	app.get('/profile/:username', profileControllerCallbacks.returnProfile);
 	app.post('/profile/:username', profileControllerCallbacks.renderProfile);
+	// app.get('/profile/:username', profileControllerCallbacks.returnProfile);
 };

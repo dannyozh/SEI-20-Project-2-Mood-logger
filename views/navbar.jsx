@@ -31,7 +31,7 @@ class Navbar extends React.Component {
 						<div class="collapse navbar-collapse" id="navbarSupportedContent-555">
 							<ul class="navbar-nav mr-auto">
 								<li class="nav-item active">
-									<a class="nav-link" href="#">
+									<a class="nav-link" href={'/profile/' + this.props.username}>
 										Home
 										<span class="sr-only">(current)</span>
 									</a>
@@ -42,7 +42,7 @@ class Navbar extends React.Component {
 									</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#">
+									<a class="nav-link" href="/logout">
 										Logout
 									</a>
 								</li>

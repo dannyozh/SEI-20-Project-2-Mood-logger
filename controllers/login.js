@@ -15,7 +15,6 @@ module.exports = (db) => {
 	let userLoginSuccess = (request, response) => {
 		const userLoginInfo = request.body;
 		let userLoginName = request.body.username;
-		console.log('this is your cookie', usernamecookie);
 		console.log(userLoginInfo);
 		// inserting into db, db needs to have a user....
 		// let hashedPassword = sha256(userLoginInfo.password);
@@ -31,15 +30,24 @@ module.exports = (db) => {
 			} else if (userLoginInfo.username === result[0].name && hashedPassword === result[0].password) {
 				console.log('login for second time');
 				response.cookie('user_name', userLoginName);
-				response.redirect('/seecurrentcard');
+				const data = {
+					username: result[0].name
+				};
+				response.render('dashboard/seeprofile', data);
 			} else {
 				response.redirect('/login');
 			}
 		});
 	};
 
+	let userLogout = (request, response) => {
+		response.clearCookie('user_name');
+		response.redirect('/login');
+	};
+
 	return {
 		userLogin,
-		userLoginSuccess
+		userLoginSuccess,
+		userLogout
 	};
 };
