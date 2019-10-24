@@ -23,14 +23,22 @@ class Landingpage extends React.Component {
 						/>
 						<br />
 						<br />
-						<div class="row">
-							<div class="col-sm-12 text-center">
-								<form method="POST" action="/register">
-									<button>New User</button>
-								</form>
-								<form mothod="POST" action="/login">
-									<button>Existing User</button>
-								</form>
+						<div class="container">
+							<div class="row justify-content-center">
+								<div class="col-4">
+									<form method="POST" action="/register">
+										<button type="button" class="btn btn-info">
+											New User
+										</button>
+									</form>
+								</div>
+								<div class="col-4">
+									<form mothod="POST" action="/login">
+										<button type="button" class="btn btn-info">
+											Existing User
+										</button>
+									</form>
+								</div>
 							</div>
 						</div>
 					</div>
