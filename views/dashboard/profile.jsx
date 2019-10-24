@@ -2,6 +2,18 @@ var React = require('react');
 
 class Profile extends React.Component {
 	render() {
+		let allcardsArr = this.props.result;
+		let allcards = allcardsArr.map((card) => {
+			return (
+				<span>
+					<p>
+						{card.date}. {card.mood_level} .{card.illness_input} .{card.log}
+					</p>
+				</span>
+			);
+		});
+		console.log('allcards', allcards);
+
 		return (
 			<html>
 				<head>
@@ -16,14 +28,8 @@ class Profile extends React.Component {
 					<div class="container text-center text-white">
 						<h1>Moodlogger</h1>
 						<hr />
-						<h3>Pen your current thoughts below:</h3>
-
-						<form action="/logsaved" method="POST">
-							<div class="form-group">
-								<textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="log" />
-							</div>
-							<input type="submit" />
-						</form>
+						<h3>Your profile</h3>
+						<p>{allcards}</p>
 					</div>
 				</body>
 			</html>
