@@ -1,0 +1,12 @@
+.body {
+	background-color: #acadca;
+}
+
+.header {
+	background-color: #acadca;
+}
+
+#myChart {
+	height: 200px;
+	width: 50%;
+}
