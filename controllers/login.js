@@ -27,7 +27,9 @@ module.exports = (db) => {
 			if (error) {
 				console.log(error);
 				console.log('are we in error?');
+				response.redirect('/login');
 			} else if (userLoginInfo.username === result[0].name && hashedPassword === result[0].password) {
+				console.log('this is result', result);
 				console.log('login for second time');
 				response.cookie('user_name', userLoginName);
 				const data = {
