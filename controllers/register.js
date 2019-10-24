@@ -15,18 +15,12 @@ module.exports = (db) => {
 	let registeredUser = (request, response) => {
 		const userRegistrationInfo = request.body;
 		// inserting into db, db needs to have a user....
-		let hashedPassword = sha256(userRegistrationInfo.password);
 		db.user.registerUserSuccess(userRegistrationInfo, (error, result) => {
 			if (error) {
 				console.log(error);
 			} else {
 				console.log('register success!');
-				let loginCookie = sha256(userRegistrationInfo.username + 'logged' + SALT);
-				response.cookie('logged_in', loginCookie);
-				response.cookie('username', userRegistrationInfo.username);
-				response.cookie('users_id', result[0].id);
-				response.cookie('password', hashedPassword);
-				response.redirect('/login');
+				response.redirect('/dashboardnew');
 			}
 		});
 	};

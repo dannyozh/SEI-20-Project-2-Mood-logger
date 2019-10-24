@@ -21,9 +21,9 @@ module.exports = (db) => {
 		db.userFeeling.saveUserFeeling(userFeelingInfo, username, date, log, (error, result) => {
 			if (error) {
 				console.log(error);
-				response.redirect('/dashboardnew');
 			} else {
 				console.log('register success!');
+				response.redirect('/seecurrentcard');
 			}
 		});
 	};

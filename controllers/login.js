@@ -14,18 +14,27 @@ module.exports = (db) => {
 
 	let userLoginSuccess = (request, response) => {
 		const userLoginInfo = request.body;
+		let usernamecookie = request.cookies.new_user;
+		console.log('this is your cookie', usernamecookie);
+		console.log(userLoginInfo);
 		// inserting into db, db needs to have a user....
-		let hashedPassword = sha256(userLoginInfo.password);
-		let registeredUsername = request.cookies.username;
-		let registeredPassword = request.cookies.password;
-		if (userLoginInfo.username === registeredUsername && hashedPassword === registeredPassword) {
-			console.log('success!');
-			response.redirect('/dashboardnew');
-			// db.user.registerUserSuccess(userRegistrationInfo, (error, result) => {
-		} else {
-			console.log('loginfail');
-			response.redirect('/login');
-		}
+		// let hashedPassword = sha256(userLoginInfo.password);
+		// let registeredUsername = request.cookies.username;
+		// let registeredPassword = request.cookies.password;
+		// let newUserAuth;
+		// let authPassword = sha256('abc');
+		db.authUser.userVer(userLoginInfo, (error, result) => {
+			let hashedPassword = sha256(userLoginInfo.password);
+			if (error) {
+				console.log(error);
+				console.log('are we in error?');
+			} else if (userLoginInfo.username === result[0].name && hashedPassword === result[0].password) {
+				console.log('login for second time');
+				response.redirect('/seecurrentcard');
+			} else {
+				response.redirect('/login');
+			}
+		});
 	};
 
 	return {
