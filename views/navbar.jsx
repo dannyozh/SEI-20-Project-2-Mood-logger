@@ -37,8 +37,8 @@ class Navbar extends React.Component {
 									</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#">
-										Features
+									<a class="nav-link" href="/dashboardnew">
+										New Log
 									</a>
 								</li>
 								<li class="nav-item">
