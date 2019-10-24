@@ -42,7 +42,7 @@ class Profile extends React.Component {
 					<link rel="stylesheet" href="/profile.css" type="text/css" />
 					<link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js" />
 				</head>
-				<Navbar />
+				<Navbar username={this.props.username} />
 				<body class="body">
 					<div class="container text-center">
 						<h1 class="header">{this.props.username}'s profile</h1>
