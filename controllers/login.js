@@ -28,6 +28,9 @@ module.exports = (db) => {
 				console.log(error);
 				console.log('are we in error?');
 				response.redirect('/login');
+			} else if (result === null) {
+				console.log('user entered in nonsense');
+				response.redirect('/login');
 			} else if (userLoginInfo.username === result[0].name && hashedPassword === result[0].password) {
 				console.log('this is result', result);
 				console.log('login for second time');
