@@ -5,31 +5,13 @@ class Profile extends React.Component {
 	render() {
 		let moods = this.props.moods;
 		let jData = JSON.stringify(moods);
+		console.log('jdata is', jData);
 		let allcardsArr = this.props.result;
-		let allcards = allcardsArr.map((card) => {
-			return (
-				<div class="row float-right col-md-3">
-					<div class="card">
-						<img class="card-img-top" src="https://im.indiatimes.in/content/2017/Feb/pexels-photo_1487234191.jpg" alt="Card image cap" />
-						<div class="card-body">
-							<h5 class="card-title">Date: {card.date}</h5>
-							<p class="card-text">
-								<b>Mood Level</b>: {card.mood_level}
-							</p>
-							<p class="card-text">
-								<b>How you were feeling</b>: {card.illness_input}
-							</p>
-							<p class="card-text">
-								<b>What you penned down</b>: {card.log}
-							</p>
-							<a href="#" class="btn btn-primary">
-								See log again
-							</a>
-						</div>
-					</div>
-				</div>
-			);
-		});
+		let lastCard = allcardsArr[0];
+
+		// let dates = this.props.dates;
+		// let DDATA = JSON.stringify(dates);
+		// console.log('this is lastcard', lastCard);
 		return (
 			<html>
 				<head>
@@ -48,7 +30,6 @@ class Profile extends React.Component {
 						<h1 class="header">{this.props.username}'s profile</h1>
 						<hr />
 						<br />
-						<p>{allcards}</p>
 						<div class="container float-left col-md-6">
 							<canvas id="myChart" />
 							<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" />
@@ -58,6 +39,23 @@ class Profile extends React.Component {
 								}}
 							/>
 							<script src="/profilechart.js" />
+						</div>
+						<div class="row float-right col-md-3">
+							<div class="card">
+								<img class="card-img-top" src="https://im.indiatimes.in/content/2017/Feb/pexels-photo_1487234191.jpg" alt="Card image cap" />
+								<div class="card-body">
+									<h5 class="card-title">Your last log, on {lastCard.date}</h5>
+									<p class="card-text">
+										<b>Mood Level</b>: {lastCard.mood_level}
+									</p>
+									<p class="card-text">
+										<b>How you were feeling</b>: {lastCard.illness_input}
+									</p>
+									<p class="card-text">
+										<b>What you penned down</b>: {lastCard.log}
+									</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</body>

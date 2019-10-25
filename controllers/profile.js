@@ -8,17 +8,62 @@ module.exports = (db) => {
 			if (error) {
 				console.log(error);
 				console.log('error with rendering profile');
+			} else if (result === null) {
+				console.log('no logs recorded');
+				response.redirect('/dashboardnew');
 			} else {
 				console.log('profile successfully rendered!');
+				// console.log('this is result', result);
+				let allMoodArr = result;
+				let allMood = allMoodArr.map((card) => {
+					return card.mood_level;
+				});
+				console.log('this is all mood', allMood);
+
 				const data = {
-					logs: result
+					result,
+					username: usercookie,
+					moods: allMood
 				};
-				console.log('logs is', data.logs);
+				console.log('this is data.moods', data.moods);
+				response.render('dashboard/profile', data);
+			}
+		});
+	};
+
+	let returnProfile = (request, response) => {
+		let usercookie = request.cookies.user_name;
+		db.findProfile.sourceDetails(usercookie, (error, result) => {
+			if (error) {
+				console.log(error);
+				console.log('error with rendering profile');
+			} else {
+				console.log('profile successfully rendered!');
+				// console.log('this is result', result);
+				let allMoodArr = result;
+				let allMood = allMoodArr.map((card) => {
+					return card.mood_level;
+				});
+
+				let allDates = result.map((card) => {
+					return card.date;
+				});
+				let reversedMoods = allMood.reverse();
+				console.log('this is reversed mood', reversedMoods);
+				// console.log('this is all dates', allDates);
+				const data = {
+					result,
+					username: usercookie,
+					moods: reversedMoods,
+					dates: allDates
+				};
+				response.render('dashboard/profile', data);
 			}
 		});
 	};
 
 	return {
-		renderProfile
+		renderProfile,
+		returnProfile
 	};
 };
