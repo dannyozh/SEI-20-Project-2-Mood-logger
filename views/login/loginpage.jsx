@@ -1,4 +1,5 @@
 var React = require('react');
+const Navbar = require('../navbar.jsx');
 
 class Loginpage extends React.Component {
 	render() {
@@ -11,8 +12,9 @@ class Loginpage extends React.Component {
 						integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 						crossorigin="anonymous"
 					/>
+					<link rel="stylesheet" href="home.css" />
 				</head>
-				<body class="bg-primary">
+				<body class="body">
 					<div class="container text-center text-white">
 						<h1>Welcome to Moodlooger</h1>
 						<hr />
@@ -20,11 +22,11 @@ class Loginpage extends React.Component {
 						<br />
 						<form method="POST" action="/loginsuccess">
 							<p> Username:</p>
-							<input name="username" />
+							<input name="username" required />
 							<br />
 							<br />
 							<p> Password:</p>
-							<input name="password" />
+							<input name="password" required />
 							<hr />
 							<input type="submit" />
 						</form>

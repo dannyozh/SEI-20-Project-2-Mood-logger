@@ -13,7 +13,7 @@ class Okmood extends React.Component {
 						crossorigin="anonymous"
 					/>
 					<link href="//fonts.googleapis.com/css?family=Lato:400,300,100,700,900" rel="stylesheet" type="text/css" />
-					<link href="/home.css" />
+					<link rel="stylesheet" href="/home.css" type="text/css" />
 				</head>
 				<Navbar />
 				<body class="body">
@@ -32,9 +32,6 @@ class Okmood extends React.Component {
 										Know where to find the sunrise and sunset times and note how the sky looks at those times, at least once. ~{' '}
 										<b>Marilyn vos Savant</b>
 									</p>
-									<a href="#" class="btn btn-outline-primary">
-										Primary
-									</a>
 								</div>
 							</div>
 							<div class="card">
@@ -52,9 +49,6 @@ class Okmood extends React.Component {
 										now we are okay. Right now, today, we are still alive, and our bodies are working marvelously. Our eyes can still see
 										the beautiful sky. Our ears can still hear the voices of our loved ones. <b>Thich Nhat Hanh</b>
 									</p>
-									<a href="#" class="btn btn-outline-primary">
-										Primary
-									</a>
 								</div>
 							</div>
 							<div class="card">
@@ -64,9 +58,6 @@ class Okmood extends React.Component {
 								<div class="card-body">
 									<h4 class="card-title">Today's log:</h4>
 									<p class="card-text">{this.props.log}</p>
-									<a href="#" class="btn btn-outline-primary">
-										Primary
-									</a>
 								</div>
 							</div>
 						</div>

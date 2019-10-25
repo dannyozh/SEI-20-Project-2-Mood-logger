@@ -37,9 +37,6 @@ class Lowmood extends React.Component {
 										trying to cheer up someone who has already decided to stay in a bad mood. Believe it or not, you can actually hurt
 										people by playing into their self-pity. <b>Joyce Meyer</b>
 									</p>
-									<a href="#" class="btn btn-outline-primary">
-										Primary
-									</a>
 								</div>
 							</div>
 							<div class="card">
@@ -56,9 +53,6 @@ class Lowmood extends React.Component {
 										“Every time you are tempted to react in the same old way, ask if you want to be a prisoner of the past or a pioneer of
 										the future.” – <b>Deepak Chopra</b>
 									</p>
-									<a href="#" class="btn btn-outline-primary">
-										Primary
-									</a>
 								</div>
 							</div>
 							<div class="card">
@@ -68,9 +62,6 @@ class Lowmood extends React.Component {
 								<div class="card-body">
 									<h4 class="card-title">Today's log:</h4>
 									<p class="card-text">{this.props.log}</p>
-									<a href="#" class="btn btn-outline-primary">
-										Primary
-									</a>
 								</div>
 							</div>
 						</div>
