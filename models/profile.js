@@ -7,7 +7,14 @@ module.exports = (dbPoolInstance) => {
 		console.log('hello sourceDetails models');
 		let currentUser = [ usercookie ];
 
-		const query1 = `SELECT * FROM dailylogs WHERE users_name = $1`;
+		const query1 = `SELECT * FROM dailylogs WHERE users_name = $1 ORDER BY ID DESC LIMIT 5`;
+
+		// SELECT * FROM dailylogs WHERE users_name = $1 ORDER BY ID DESC LIMIT 5(
+		//     SELECT FROM
+		// )
+		// SELECT * FROM dailylogs WHERE users_name = 'Daniel' ORDER BY ID DESC LIMIT 5 AND ORDER BY ID DESC LIMIT 1;
+		// SELECT * FROM (SELECT * FROM dailylogs WHERE users_name = 'Daniel' ORDER BY ID DESC LIMIT 5) AS table_alias ORDER BY DATE DESC LIMIT 1;
+		// (SELECT * FROM dailylogs WHERE users_name = 'Daniel' ORDER BY ID DESC LIMIT 5) AND (SELECT * FROM dailylogs WHERE users_name = 'Daniel' ORDER BY ID DESC LIMIT 1);
 
 		dbPoolInstance.query(query1, currentUser, (error, queryResult) => {
 			if (error) {
@@ -15,10 +22,10 @@ module.exports = (dbPoolInstance) => {
 				callback(error, null);
 			} else {
 				// invoke callback function with results after query has executed
-				console.log('findging logs for selected user');
+				// console.log('findging logs for selected user');
 				if (queryResult.rows.length > 0) {
 					callback(null, queryResult.rows);
-					console.log('found dailylogs', queryResult.rows);
+					// console.log('found dailylogs', queryResult.rows);
 				} else {
 					callback(null, null);
 				}

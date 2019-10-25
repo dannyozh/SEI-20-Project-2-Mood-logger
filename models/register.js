@@ -6,9 +6,10 @@ module.exports = (dbPoolInstance) => {
 	let registerUserSuccess = (userRegistrationInfo, callback) => {
 		console.log(userRegistrationInfo);
 		console.log('hello models');
-		const arrQuery = [ userRegistrationInfo.username ];
+		let hashedPassword = sha256(userRegistrationInfo.password);
+		const arrQuery = [ userRegistrationInfo.username, hashedPassword ];
 
-		const query = `INSERT INTO users (name) VALUES($1) RETURNING *`;
+		const query = `INSERT INTO users (name, password) VALUES($1, $2) RETURNING *`;
 
 		dbPoolInstance.query(query, arrQuery, (error, queryResult) => {
 			if (error) {

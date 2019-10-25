@@ -17,10 +17,7 @@ module.exports = (dbPoolInstance) => {
 				console.log('this the errorsrsrs', error);
 			} else {
 				// invoke callback function with results after query has executed
-				if (queryResult.rows.length === 0) {
-					console.log('found yoa');
-					reload();
-				} else if (queryResult.rows.length > 0) {
+				if (queryResult.rows.length > 0) {
 					console.log('this is queryresult', queryResult.rows);
 					callback(null, queryResult.rows);
 				} else {

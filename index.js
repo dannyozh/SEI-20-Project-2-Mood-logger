@@ -62,6 +62,7 @@ setRoutesFunction(app, allModels);
  * ===================================
  */
 const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 const server = app.listen(PORT, () => console.log('~~~ Tuning in to the waves of port ' + PORT + ' ~~~'));
 
