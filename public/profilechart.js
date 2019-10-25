@@ -1,12 +1,13 @@
 console.log('chart js up and running');
-console.log(allmoods);
+console.log('allmoods is', allmoods);
+console.log('alldates is', alldates);
 let today = new Date();
 for (let i = 0; i < 5; i++) {}
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
 	type: 'line',
 	data: {
-		labels: [ 'Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5' ],
+		labels: alldates,
 		datasets: [
 			{
 				label: 'Your mood level over the past 5 days:',

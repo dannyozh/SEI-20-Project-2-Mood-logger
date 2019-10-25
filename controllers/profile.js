@@ -12,20 +12,29 @@ module.exports = (db) => {
 				console.log('no logs recorded');
 				response.redirect('/dashboardnew');
 			} else {
-				console.log('profile successfully rendered!');
+				// console.log('profile successfully rendered!');
 				// console.log('this is result', result);
 				let allMoodArr = result;
 				let allMood = allMoodArr.map((card) => {
 					return card.mood_level;
 				});
-				console.log('this is all mood', allMood);
+				let reversedMoods = allMood.reverse();
 
+				let allDatesArr = result;
+				let allDates = allDatesArr.map((card) => {
+					return card.date;
+				});
+
+				let reversedDates = allDates.reverse();
+
+				// console.log('this is reversed mood', reversedMoods);
+				// console.log('this is all dates', allDates);
 				const data = {
 					result,
 					username: usercookie,
-					moods: allMood
+					moods: reversedMoods,
+					dates: reversedDates
 				};
-				console.log('this is data.moods', data.moods);
 				response.render('dashboard/profile', data);
 			}
 		});
@@ -38,24 +47,27 @@ module.exports = (db) => {
 				console.log(error);
 				console.log('error with rendering profile');
 			} else {
-				console.log('profile successfully rendered!');
+				// console.log('profile successfully rendered!');
 				// console.log('this is result', result);
 				let allMoodArr = result;
 				let allMood = allMoodArr.map((card) => {
 					return card.mood_level;
 				});
+				let reversedMoods = allMood.reverse();
 
-				let allDates = result.map((card) => {
+				let allDatesArr = result;
+				let allDates = allDatesArr.map((card) => {
 					return card.date;
 				});
-				let reversedMoods = allMood.reverse();
-				console.log('this is reversed mood', reversedMoods);
+				let reversedDates = allDates.reverse();
+
+				// console.log('this is reversed mood', reversedMoods);
 				// console.log('this is all dates', allDates);
 				const data = {
 					result,
 					username: usercookie,
 					moods: reversedMoods,
-					dates: allDates
+					dates: reversedDates
 				};
 				response.render('dashboard/profile', data);
 			}

@@ -5,12 +5,14 @@ class Profile extends React.Component {
 	render() {
 		let moods = this.props.moods;
 		let jData = JSON.stringify(moods);
-		console.log('jdata is', jData);
+		// console.log('jdata is', jData);
 		let allcardsArr = this.props.result;
 		let lastCard = allcardsArr[0];
 
 		// let dates = this.props.dates;
-		// let DDATA = JSON.stringify(dates);
+		let gettingAllDates = this.props.dates;
+		let ddata = JSON.stringify(gettingAllDates);
+		// console.log('ddata is', ddata);
 		// console.log('this is lastcard', lastCard);
 		return (
 			<html>
@@ -35,7 +37,8 @@ class Profile extends React.Component {
 							<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" />
 							<script
 								dangerouslySetInnerHTML={{
-									__html: `var allmoods = ${jData};`
+									__html: `var allmoods = ${jData};
+									var alldates = ${ddata}`
 								}}
 							/>
 							<script src="/profilechart.js" />
