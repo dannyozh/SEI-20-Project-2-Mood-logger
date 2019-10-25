@@ -51,7 +51,7 @@ class Navbar extends React.Component {
 								<li class="nav-item avatar">
 									<a class="nav-link p-0" href="#">
 										<img
-											src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg"
+											src="https://image.flaticon.com/icons/svg/149/149071.svg"
 											class="rounded-circle z-depth-0"
 											alt="avatar image"
 											height="35"
