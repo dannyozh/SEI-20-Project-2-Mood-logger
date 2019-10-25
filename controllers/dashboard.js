@@ -9,12 +9,16 @@ module.exports = (db) => {
    */
 
 	let createDashboard = (request, response) => {
-		response.render('dashboard/dashboardcreate');
+		let usercookie = request.cookies.user_name;
+		const data = {
+			username: usercookie
+		};
+		response.render('dashboard/dashboardcreate', data);
 	};
 
 	let saveFeeling = (request, response) => {
 		const userFeelingInfo = request.body;
-		let username = request.cookies.username;
+		let username = request.cookies.user_name;
 		const date = request.body.date;
 		const log = request.body.log;
 		// inserting into db, db needs to have a user....
@@ -22,47 +26,32 @@ module.exports = (db) => {
 			if (error) {
 				console.log(error);
 			} else {
-				console.log('register success!');
+				console.log('first card entered!');
 				response.redirect('/seecurrentcard');
 			}
 		});
 	};
 
-	// let createLogs = (request, response) => {
-	// 	response.render('dashboard/dashboardlogging');
-	// };
-
-	// let saveLogs = (request, response) => {
-	// 	const userLogInfo = request.body.log;
-	// 	console.log(userLogInfo);
-	// 	db.userLog.saveUserLog(userLogInfo, (error, result) => {
-	// 		if (error) {
-	// 			console.log(error);
-	// 			response.redirect('/dashboardlogs');
-	// 		} else {
-	// 			console.log('log recorded!');
-	// 			response.redirect('/dashboardlogging');
-	// 		}
-	// 	});
-	// };
-
 	let locatingCurrentCard = (request, response) => {
 		// inserting into db, db needs to have a user....
 
 		db.cardFinder.findFeeling((error, result) => {
+			const data = {
+				username: result[0].users_name,
+				mood: result[0].mood_level,
+				feeling: result[0].illness_input,
+				log: result[0].log,
+				date: result[0].date
+			};
 			if (error) {
 				console.log('the error is', error);
+			} else if (data.mood >= 0 && data.mood < 3 && (data.feeling === 'depressed' || data.feeling === 'anxious')) {
+				console.log('rendering really low-mood page');
+				response.render('cardoutcomes/lowmood', data);
+			} else if (data.mood >= 3 && data.mood <= 5 && (data.feeling === 'ok' || data.feeling === 'stressed')) {
+				response.render('cardoutcomes/okmood', data);
 			} else {
-				console.log('details retrieved');
-				console.log('this is result', result[0].users_name);
-				const data = {
-					username: result[0].users_name,
-					mood: result[0].mood_level,
-					feeling: result[0].illness_input,
-					log: result[0].log,
-					date: result[0].date
-				};
-				response.render('dashboard/rendercard.jsx', data);
+				response.render('dashboard/rendercard', data);
 			}
 		});
 	};

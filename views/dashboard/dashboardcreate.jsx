@@ -17,8 +17,7 @@ class Dashboardcreate extends React.Component {
 				<body class="body">
 					<Navbar />
 					<div class="container text-center text-white">
-						<h1>Moodlogger</h1>
-						<h3>How're you feeling today?</h3>
+						<h2>Hello {this.props.username}, how're you feeling today?</h2>
 						<br />
 						<br />
 
@@ -26,8 +25,7 @@ class Dashboardcreate extends React.Component {
 							<div class="form-group">
 								<div class="row">
 									<div class="col-md-6">
-										<label for="exampleInputEmail1">Date</label>
-										<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="dd-mm-yy" />
+										<input class="form-control" type="text" placeholder="Date" name="date" />
 										<br />
 
 										<label>
@@ -49,7 +47,7 @@ class Dashboardcreate extends React.Component {
 										<br />
 
 										<p>Rate your mood, from poor to great:</p>
-										<input type="range" name="points" min="0" max="10" />
+										<input type="range" name="points" min="0" max="5" />
 									</div>
 									<div class="col-md-6">
 										<h3>Pen your current thoughts below:</h3>
