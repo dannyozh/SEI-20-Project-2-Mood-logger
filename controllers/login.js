@@ -38,7 +38,7 @@ module.exports = (db) => {
 				const data = {
 					username: result[0].name
 				};
-				response.render('dashboard/seeprofile', data);
+				response.redirect('profile/:username');
 			} else {
 				response.redirect('/login');
 			}
