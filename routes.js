@@ -7,7 +7,8 @@ module.exports = (app, allModels) => {
 
 	// register the user
 	const registerControllerCallbacks = require('./controllers/register')(allModels);
-	app.post('/register', registerControllerCallbacks.userRegistration);
+	app.get;
+	app.get('/register', registerControllerCallbacks.userRegistration);
 	app.post('/registersuccess', registerControllerCallbacks.registeredUser);
 	``;
 	// login user
