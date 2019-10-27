@@ -7,7 +7,35 @@ class Profile extends React.Component {
 		let jData = JSON.stringify(moods);
 		// console.log('jdata is', jData);
 		let allcardsArr = this.props.result;
-		let lastCard = allcardsArr[0];
+		// console.log('this is allcards arr', allcardsArr);
+		let allcards = allcardsArr.map((flow) => {
+			return (
+				<div class="card">
+					<div class="row no-gutters" id="card-size">
+						<div class="col-md-4" id="calender">
+							<p id="date">{flow.date}</p>
+						</div>
+						<div class="col-md-7">
+							<div class="card-body">
+								<h5 class="card-title">
+									<b>Mood: </b>
+									{flow.mood_level}
+								</h5>
+								<p class="card-text">
+									<b>Feelings: </b>
+									{flow.illness_input}
+								</p>
+								<p class="card-text">
+									<b>Log: </b>
+									{flow.log}
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			);
+		});
+		// console.log('this is allcards', allcards);
 
 		// let dates = this.props.dates;
 		let gettingAllDates = this.props.dates;
@@ -32,7 +60,7 @@ class Profile extends React.Component {
 						<h1 class="header">{this.props.username}'s profile</h1>
 						<hr />
 						<br />
-						<div class="container float-left col-md-6">
+						<div class="container float-left col-md-7">
 							<canvas id="myChart" />
 							<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" />
 							<script
@@ -43,22 +71,8 @@ class Profile extends React.Component {
 							/>
 							<script src="/profilechart.js" />
 						</div>
-						<div class="row float-right col-md-3">
-							<div class="card">
-								<img class="card-img-top" src="https://im.indiatimes.in/content/2017/Feb/pexels-photo_1487234191.jpg" alt="Card image cap" />
-								<div class="card-body">
-									<h5 class="card-title">Your last log, on {lastCard.date}</h5>
-									<p class="card-text">
-										<b>Mood Level</b>: {lastCard.mood_level}
-									</p>
-									<p class="card-text">
-										<b>How you were feeling</b>: {lastCard.illness_input}
-									</p>
-									<p class="card-text">
-										<b>What you penned down</b>: {lastCard.log}
-									</p>
-								</div>
-							</div>
+						<div class="row float-right col-md-4" id="main-row">
+							<span>{allcards}</span>
 						</div>
 					</div>
 				</body>
