@@ -11,10 +11,11 @@ class Navbar extends React.Component {
 						integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 						crossorigin="anonymous"
 					/>
+					<link rel="stylesheet" href="/navbar.css" type="text/css" />
 				</head>
 				<body>
 					<nav class="mb-1 navbar navbar-expand-lg navbar-dark orange lighten-1">
-						<a class="navbar-brand" href="#">
+						<a class="navbar-link" href={'/profile/' + this.props.username}>
 							Moodlogger
 						</a>
 						<button
@@ -30,12 +31,6 @@ class Navbar extends React.Component {
 						</button>
 						<div class="collapse navbar-collapse" id="navbarSupportedContent-555">
 							<ul class="navbar-nav mr-auto">
-								<li class="nav-item active">
-									<a class="nav-link" href={'/profile/' + this.props.username}>
-										Home
-										<span class="sr-only">(current)</span>
-									</a>
-								</li>
 								<li class="nav-item">
 									<a class="nav-link" href="/dashboardnew">
 										New Log
