@@ -29,6 +29,11 @@ class Loginpage extends React.Component {
 							<input name="password" required />
 							<hr />
 							<input type="submit" />
+							<br />
+							<br />
+						</form>
+						<form action="/register">
+							<input type="submit" value="New here? Click to register" />
 						</form>
 					</div>
 				</body>

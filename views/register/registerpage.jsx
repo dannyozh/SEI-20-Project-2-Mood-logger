@@ -33,6 +33,10 @@ class Register extends React.Component {
 							<hr />
 							<input type="submit" />
 						</form>
+						<br />
+						<form action="/login">
+							<input type="submit" value="Not new here? Click to login" />
+						</form>
 					</div>
 				</body>
 			</html>
