@@ -51,7 +51,7 @@ class Profile extends React.Component {
 						integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 						crossorigin="anonymous"
 					/>
-					<link rel="stylesheet" href="/profile.css" type="text/css" />
+					<link rel="stylesheet" href="/profilemorning.css" type="text/css" />
 					<link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js" />
 				</head>
 				<Navbar username={this.props.username} />

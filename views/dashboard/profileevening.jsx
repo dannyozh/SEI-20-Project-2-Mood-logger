@@ -51,28 +51,31 @@ class Profile extends React.Component {
 						integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 						crossorigin="anonymous"
 					/>
-					<link rel="stylesheet" href="/profile.css" type="text/css" />
+					<link rel="stylesheet" href="/profileevening.css" type="text/css" />
 					<link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js" />
 				</head>
-				<Navbar username={this.props.username} />
+
 				<body class="body">
-					<div class="container text-center">
-						<h1 class="header">Good Evening {this.props.username}!</h1>
-						<hr />
-						<br />
-						<div class="container float-left col-md-7">
-							<canvas id="myChart" />
-							<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" />
-							<script
-								dangerouslySetInnerHTML={{
-									__html: `var allmoods = ${jData};
+					<Navbar username={this.props.username} />
+					<div class="container" id="main-container">
+						<div class="container text-center">
+							<h1 class="header text-white">Good Evening {this.props.username}!</h1>
+							<hr />
+							<br />
+							<div class="container float-left col-md-7">
+								<canvas id="myChart" />
+								<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" />
+								<script
+									dangerouslySetInnerHTML={{
+										__html: `var allmoods = ${jData};
 									var alldates = ${ddata}`
-								}}
-							/>
-							<script src="/profilechart.js" />
-						</div>
-						<div class="row float-right col-md-4" id="main-row">
-							<span>{allcards}</span>
+									}}
+								/>
+								<script src="/profilechart.js" />
+							</div>
+							<div class="row float-right col-md-4" id="main-row">
+								<span>{allcards}</span>
+							</div>
 						</div>
 					</div>
 				</body>
