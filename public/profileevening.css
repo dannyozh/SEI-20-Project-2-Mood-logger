@@ -1,0 +1,54 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	-webkit-transition: all .1s linear 0;
+	-moz-transition: all .1s linear 0;
+	transition: all .1s linear 0;
+}
+
+/* .container {
+	background-color: green;
+} */
+
+html,
+.body {
+	background-image: url(http://cdn.osxdaily.com/wp-content/uploads/2018/06/macos-mojave-night-lightened-r.jpg);
+}
+
+#myChart {
+	height: 200px;
+	width: 50%;
+}
+
+#main-row {
+	overflow: scroll;
+	max-height: 495px;
+	max-width: 320px;
+}
+
+#calender {
+	max-height: 55px;
+	max-width: 55px;
+	position: relative;
+	margin: 1.5em;
+	padding: 10px 20px;
+	background: #f8f8f8;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 5px;
+	border: 1px solid #e8e8e8;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+#date {
+	text-orientation: mixed;
+	font-size: 10px;
+}
+
+.no-gutters {
+	max-width: 450px;
+	box-shadow: 10px 0 5px -2px #888;
+}
