@@ -42,6 +42,9 @@ module.exports = (db) => {
 
 	let returnProfile = (request, response) => {
 		let usercookie = request.cookies.user_name;
+		let today = new Date();
+		let currentTime = today.getHours();
+		console.log('currenttime is', currentTime);
 		db.findProfile.sourceDetails(usercookie, (error, result) => {
 			if (error) {
 				console.log(error);
@@ -69,7 +72,13 @@ module.exports = (db) => {
 					moods: reversedMoods,
 					dates: reversedDates
 				};
-				response.render('dashboard/profile', data);
+				if (currentTime >= 24 && currentTime <= 11) {
+					response.render('dashboard/profilemorning', data);
+				} else if (currentTime >= 12 && currentTime <= 5) {
+					response.render('dashboard/profileafternoon', data);
+				} else {
+					response.render('dashboard/profileevening', data);
+				}
 			}
 		});
 	};
