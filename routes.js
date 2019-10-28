@@ -7,7 +7,6 @@ module.exports = (app, allModels) => {
 
 	// register the user
 	const registerControllerCallbacks = require('./controllers/register')(allModels);
-	app.get;
 	app.get('/register', registerControllerCallbacks.userRegistration);
 	app.post('/registersuccess', registerControllerCallbacks.registeredUser);
 	``;
@@ -29,6 +28,4 @@ module.exports = (app, allModels) => {
 	// user profile
 	const profileControllerCallbacks = require('./controllers/profile')(allModels);
 	app.get('/profile/:username', profileControllerCallbacks.returnProfile);
-	app.post('/profile/:username', profileControllerCallbacks.renderProfile);
-	// app.get('/profile/:username', profileControllerCallbacks.returnProfile);
 };
