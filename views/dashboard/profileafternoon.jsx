@@ -1,13 +1,40 @@
 var React = require('react');
 var Navbar = require('../navbar');
 
-class Profile extends React.Component {
+class Profileafternoon extends React.Component {
 	render() {
 		let moods = this.props.moods;
+
+		// parsing moods to show in chart
 		let jData = JSON.stringify(moods);
-		// console.log('jdata is', jData);
+
+		// running function to input insight into box
+		let moodAggValue = this.props.aggregateMoods;
+		console.log('mood aggregate is', moodAggValue);
+		let insightFunction = function(moodAggValue) {
+			if (moodAggValue >= 0 && moodAggValue <= 1.5) {
+				return (
+					<div class="boxed col-md-8" id="insight-form">
+						<p>Your mood is low</p>
+					</div>
+				);
+			} else if (moodAggValue > 1.5 && moodAggValue <= 3.5) {
+				return (
+					<div class="boxed col-md-8" id="insight-form">
+						<p>Your mood is ok</p>
+					</div>
+				);
+			} else {
+				return (
+					<div class="boxed col-md-8" id="insight-form">
+						<p>You're feeling better. Great!!</p>
+					</div>
+				);
+			}
+		};
+
+		// getting all card values
 		let allcardsArr = this.props.result;
-		// console.log('this is allcards arr', allcardsArr);
 		let allcards = allcardsArr.map((flow) => {
 			return (
 				<div class="card">
@@ -35,13 +62,10 @@ class Profile extends React.Component {
 				</div>
 			);
 		});
-		// console.log('this is allcards', allcards);
 
 		// let dates = this.props.dates;
 		let gettingAllDates = this.props.dates;
 		let ddata = JSON.stringify(gettingAllDates);
-		// console.log('ddata is', ddata);
-		// console.log('this is lastcard', lastCard);
 		return (
 			<html>
 				<head>
@@ -53,6 +77,9 @@ class Profile extends React.Component {
 					/>
 					<link rel="stylesheet" href="/profileafternoon.css" type="text/css" />
 					<link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js" />
+					<link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet" />
+
+					<script src="profile.js" />
 				</head>
 				<Navbar username={this.props.username} />
 				<body class="body">
@@ -60,7 +87,7 @@ class Profile extends React.Component {
 						<h1 class="header text-white">Good Afternoon {this.props.username}!</h1>
 						<hr />
 						<br />
-						<div class="container float-left col-md-7">
+						<div class="row float-left col-md-7">
 							<canvas id="myChart" />
 							<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" />
 							<script
@@ -70,6 +97,14 @@ class Profile extends React.Component {
 								}}
 							/>
 							<script src="/profilechart.js" />
+							<div class="container">
+								<div class="row">
+									<span class="dot">
+										<p class="circle-text">{moodAggValue}</p>
+									</span>
+									{insightFunction(moodAggValue)}
+								</div>
+							</div>
 						</div>
 						<div class="row float-right col-md-4" id="main-row">
 							<span>{allcards}</span>
@@ -81,4 +116,4 @@ class Profile extends React.Component {
 	}
 }
 
-module.exports = Profile;
+module.exports = Profileafternoon;

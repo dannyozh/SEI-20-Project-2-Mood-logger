@@ -14,7 +14,10 @@
 
 html,
 .body {
-	background-image: url(http://cdn.osxdaily.com/wp-content/uploads/2018/06/macos-mojave-night-lightened-r.jpg);
+	background-image: url(http://papers.co/wallpaper/papers.co-mf15-sky-bright-shiny-afternoon-nature-29-wallpaper.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
 }
 
 #myChart {
@@ -51,4 +54,27 @@ html,
 .no-gutters {
 	max-width: 450px;
 	box-shadow: 10px 0 5px -2px #888;
+}
+
+.dot {
+	height: 130px;
+	width: 130px;
+	margin-top: 5%;
+	background: radial-gradient(#e66465, #9198e5);
+	border-radius: 50%;
+}
+
+.circle-text {
+	margin-top: 20%;
+	font-family: 'Staatliches', cursive;
+	font-size: 50px;
+	font-weight: bold;
+	color: linear-gradient(#f0c25b, #4b1248);
+}
+
+#insight-form {
+	margin-top: 4%;
+	margin-left: 3%;
+	background: linear-gradient(#ee9ca7, #ffdde1);
+	min-height: 100px;
 }

@@ -1,11 +1,35 @@
 var React = require('react');
 var Navbar = require('../navbar');
 
-class Profile extends React.Component {
+class Profileevening extends React.Component {
 	render() {
 		let moods = this.props.moods;
 		let jData = JSON.stringify(moods);
-		// console.log('jdata is', jData);
+		// put mood in box
+		let moodAggValue = this.props.aggregateMoods;
+		console.log('mood aggregate is', moodAggValue);
+		let insightFunction = function(moodAggValue) {
+			if (moodAggValue >= 0 && moodAggValue <= 1.5) {
+				return (
+					<div class="boxed col-md-8" id="insight-form">
+						<p>Your mood is low</p>
+					</div>
+				);
+			} else if (moodAggValue > 1.5 && moodAggValue <= 3.5) {
+				return (
+					<div class="boxed col-md-8" id="insight-form">
+						<p>Your mood is ok</p>
+					</div>
+				);
+			} else {
+				return (
+					<div class="boxed col-md-8" id="insight-form">
+						<p>You're feeling better. Great!!</p>
+					</div>
+				);
+			}
+		};
+
 		let allcardsArr = this.props.result;
 		// console.log('this is allcards arr', allcardsArr);
 		let allcards = allcardsArr.map((flow) => {
@@ -72,6 +96,14 @@ class Profile extends React.Component {
 									}}
 								/>
 								<script src="/profilechart.js" />
+								<div class="container">
+									<div class="row">
+										<span class="dot">
+											<p class="circle-text">{moodAggValue}</p>
+										</span>
+										{insightFunction(moodAggValue)}
+									</div>
+								</div>
 							</div>
 							<div class="row float-right col-md-4" id="main-row">
 								<span>{allcards}</span>
@@ -84,4 +116,4 @@ class Profile extends React.Component {
 	}
 }
 
-module.exports = Profile;
+module.exports = Profileevening;
