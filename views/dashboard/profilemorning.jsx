@@ -57,7 +57,7 @@ class Profile extends React.Component {
 				<Navbar username={this.props.username} />
 				<body class="body">
 					<div class="container text-center">
-						<h1 class="header">Good Morning {this.props.username}!</h1>
+						<h1 class="header text-white">Good Morning {this.props.username}!</h1>
 						<hr />
 						<br />
 						<div class="container float-left col-md-7">
