@@ -1,8 +1,4 @@
 console.log('chart js up and running');
-console.log('allmoods is', allmoods);
-console.log('alldates is', alldates);
-let today = new Date();
-for (let i = 0; i < 5; i++) {}
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
 	type: 'line',
