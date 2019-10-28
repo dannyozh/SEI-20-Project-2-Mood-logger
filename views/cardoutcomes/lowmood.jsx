@@ -66,9 +66,9 @@ class Lowmood extends React.Component {
 							</div>
 						</div>
 						<br />
-						<form action={'/profile/' + this.props.username} method="POST" class="text-center">
-							<input type="submit" value="To Dashboard!" />
-						</form>
+						<a class="btn btn-primary" href={'/profile/' + this.props.username} role="button">
+							To Dashboard
+						</a>
 					</div>
 				</body>
 			</html>
