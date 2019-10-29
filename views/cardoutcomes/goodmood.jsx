@@ -1,8 +1,7 @@
 var React = require('react');
 var Navbar = require('../navbar');
-var happyQuotes = require('../../public/quotes');
 
-class Othermood extends React.Component {
+class Goodmood extends React.Component {
 	render() {
 		var happyQuotes = [
 			'Today I choose life. Every morning when I wake up I can choose joy, happiness, negativity, pain... To feel the freedom that comes from being able to continue to make mistakes and choices - today I choose to feel life, not to deny my humanity but embrace it. ~ Kevyn Aucoin',
@@ -25,11 +24,19 @@ class Othermood extends React.Component {
 			'Live by this credo: have a little laugh at life and look around you for happiness instead of sadness. Laughter has always brought me out of unhappy situations. ~ Red Skelton',
 			'To me, sadness and humor are not disrelated and humor is the best tool I have had against the sadness in my life. ~ Mike Mills'
 		];
+
+		var resilienceQuotes = [
+			'Whatever we are waiting for - peace of mind, contentment, grace, the inner awareness of simple abundance - it will surely come to us, but only when we are ready to receive it with an open and grateful heart. ~ Sarah Ban Breathnach',
+			"You do indeed have a past, but not now! And, yes, you have a future, but not now! You can consume your now with thoughts of 'then' and 'maybe,' but that will keep you from the inner peace you could experience. ~ Wayne Dyer",
+			"We must learn how to live in the space of inner peace in our everyday lives. This takes consistent, conscious effort because I know so many black women are hurting and sad, and we don't easily express our heartache or show our wounds. ~ Susan L. Taylor",
+			"I am thankful the most important key in history was invented. It's not the key to your house, your car, your boat, your safety deposit box, your bike lock or your private community. It's the key to order, sanity, and peace of mind. The key is 'Delete.' ~ Elayne Boosler",
+			'No one is perfect... absolutely no one. Like precious stones, we have a few flaws, but why focus on that? Focus on what you like about yourself, and that will bring you happiness and peace. ~ Richard Simmons'
+		];
 		var randomNumber = Math.floor(Math.random() * happyQuotes.length);
 
 		let findSadQuote = sadQuotes[randomNumber];
 		let findHappyQuote = happyQuotes[randomNumber];
-		console.log('quote is', findHappyQuote);
+		let findResilienceQuote = resilienceQuotes[randomNumber];
 		return (
 			<html>
 				<head>
@@ -44,31 +51,26 @@ class Othermood extends React.Component {
 				</head>
 				<Navbar />
 				<body class="body">
-					<div class="container text-center">
+					<div class="container">
 						<h3 class="text-white text-center"> Dear {this.props.username}, this is a summary of today's log.</h3>
 						<hr />
 						<div class="card-group vgr-cards">
 							<div class="card">
 								<div class="card-img-body">
-									<img class="card-img" src="https://source.unsplash.com/1600x900/?depressed,sad,lonely" alt="Card image cap" />
+									<img class="card-img" src="https://source.unsplash.com/1600x900/?smiling,hapinnes,carefree" alt="Card image cap" />
 								</div>
 								<div class="card-body">
 									<h4 class="card-title">Mood Score: {this.props.mood}</h4>
-									<p class="card-text" id="insert-quote">
-										{findHappyQuote}
-									</p>
+									<p class="card-text">{findHappyQuote}</p>
 								</div>
 							</div>
 							<div class="card">
 								<div class="card-img-body">
-									<img class="card-img" src="https://source.unsplash.com/1600x900/?anxiety" alt="Card image cap" />
+									<img class="card-img" src="https://source.unsplash.com/1600x900/?happiness,freedom" alt="Card image cap" />
 								</div>
 								<div class="card-body">
 									<h4 class="card-title">Feeling {this.props.feeling}</h4>
-									<p class="card-text">
-										“Every time you are tempted to react in the same old way, ask if you want to be a prisoner of the past or a pioneer of
-										the future.” – <b>Deepak Chopra</b>
-									</p>
+									<p class="card-text">{findHappyQuote}</p>
 								</div>
 							</div>
 							<div class="card">
@@ -82,7 +84,7 @@ class Othermood extends React.Component {
 							</div>
 						</div>
 						<hr />
-						<a class="btn btn-lg btn-info" href={'/profile/' + this.props.username} role="button">
+						<a class="btn btn-primary" href={'/profile/' + this.props.username} role="button">
 							To Dashboard
 						</a>
 					</div>
@@ -92,4 +94,4 @@ class Othermood extends React.Component {
 	}
 }
 
-module.exports = Othermood;
+module.exports = Goodmood;

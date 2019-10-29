@@ -24,10 +24,19 @@ class Okmood extends React.Component {
 			'Live by this credo: have a little laugh at life and look around you for happiness instead of sadness. Laughter has always brought me out of unhappy situations. ~ Red Skelton',
 			'To me, sadness and humor are not disrelated and humor is the best tool I have had against the sadness in my life. ~ Mike Mills'
 		];
+
+		var resilienceQuotes = [
+			'Whatever we are waiting for - peace of mind, contentment, grace, the inner awareness of simple abundance - it will surely come to us, but only when we are ready to receive it with an open and grateful heart. ~ Sarah Ban Breathnach',
+			"You do indeed have a past, but not now! And, yes, you have a future, but not now! You can consume your now with thoughts of 'then' and 'maybe,' but that will keep you from the inner peace you could experience. ~ Wayne Dyer",
+			"We must learn how to live in the space of inner peace in our everyday lives. This takes consistent, conscious effort because I know so many black women are hurting and sad, and we don't easily express our heartache or show our wounds. ~ Susan L. Taylor",
+			"I am thankful the most important key in history was invented. It's not the key to your house, your car, your boat, your safety deposit box, your bike lock or your private community. It's the key to order, sanity, and peace of mind. The key is 'Delete.' ~ Elayne Boosler",
+			'No one is perfect... absolutely no one. Like precious stones, we have a few flaws, but why focus on that? Focus on what you like about yourself, and that will bring you happiness and peace. ~ Richard Simmons'
+		];
 		var randomNumber = Math.floor(Math.random() * happyQuotes.length);
 
 		let findSadQuote = sadQuotes[randomNumber];
 		let findHappyQuote = happyQuotes[randomNumber];
+		let findResilienceQuote = resilienceQuotes[randomNumber];
 		return (
 			<html>
 				<head>
@@ -48,36 +57,25 @@ class Okmood extends React.Component {
 						<div class="card-group vgr-cards">
 							<div class="card">
 								<div class="card-img-body">
-									<img class="card-img" src="http://pickupyourdreams.com/wp-content/uploads/2015/04/Sunlight.jpg" alt="Card image cap" />
+									<img class="card-img" src="https://source.unsplash.com/1600x900/?positivity" alt="Card image cap" />
 								</div>
 								<div class="card-body">
 									<h4 class="card-title">Mood Score: {this.props.mood}</h4>
-									<p class="card-text">
-										Know where to find the sunrise and sunset times and note how the sky looks at those times, at least once. ~{' '}
-										<b>Marilyn vos Savant</b>
-									</p>
+									<p class="card-text">{findResilienceQuote}</p>
 								</div>
 							</div>
 							<div class="card">
 								<div class="card-img-body">
-									<img
-										class="card-img"
-										src="https://www.happybrainscience.com/wp-content/uploads/2016/09/Stress-For-Success-768x402.jpg"
-										alt="Card image cap"
-									/>
+									<img class="card-img" src="https://source.unsplash.com/1600x900/?refreshed,ok" alt="Card image cap" />
 								</div>
 								<div class="card-body">
 									<h4 class="card-title">Feeling {this.props.feeling}</h4>
-									<p class="card-text">
-										Fear keeps us focused on the past or worried about the future. If we can acknowledge our fear, we can realize that right
-										now we are okay. Right now, today, we are still alive, and our bodies are working marvelously. Our eyes can still see
-										the beautiful sky. Our ears can still hear the voices of our loved ones. <b>Thich Nhat Hanh</b>
-									</p>
+									<p class="card-text">{findHappyQuote}</p>
 								</div>
 							</div>
 							<div class="card">
 								<div class="card-img-body">
-									<img class="card-img" src="https://mamabee.com/wp-content/uploads/2019/07/1-12-735x400.jpg" alt="Card image cap" />
+									<img class="card-img" src="https://source.unsplash.com/1600x900/?writing" alt="Card image cap" />
 								</div>
 								<div class="card-body">
 									<h4 class="card-title">Today's log:</h4>

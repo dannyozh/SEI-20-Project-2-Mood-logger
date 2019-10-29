@@ -1,7 +1,7 @@
 var React = require('react');
 var Navbar = require('../navbar');
 
-class Lowmood extends React.Component {
+class Lowokmood extends React.Component {
 	render() {
 		var happyQuotes = [
 			'Today I choose life. Every morning when I wake up I can choose joy, happiness, negativity, pain... To feel the freedom that comes from being able to continue to make mistakes and choices - today I choose to feel life, not to deny my humanity but embrace it. ~ Kevyn Aucoin',
@@ -57,22 +57,20 @@ class Lowmood extends React.Component {
 						<div class="card-group vgr-cards">
 							<div class="card">
 								<div class="card-img-body">
-									<img class="card-img" src="https://source.unsplash.com/1600x900/?depressed,sad,lonely" alt="Card image cap" />
+									<img class="card-img" src="https://source.unsplash.com/1600x900/?moody,sad,depressed" alt="Card image cap" />
 								</div>
 								<div class="card-body">
 									<h4 class="card-title">Mood Score: {this.props.mood}</h4>
-									<p class="card-text" id="insert-quote">
-										{findSadQuote}
-									</p>
+									<p class="card-text">{findHappyQuote}</p>
 								</div>
 							</div>
 							<div class="card">
 								<div class="card-img-body">
-									<img class="card-img" src="https://source.unsplash.com/1600x900/?anxiety" alt="Card image cap" />
+									<img class="card-img" src="https://source.unsplash.com/1600x900/?sad,depressed" alt="Card image cap" />
 								</div>
 								<div class="card-body">
 									<h4 class="card-title">Feeling {this.props.feeling}</h4>
-									<p class="card-text">{findResilienceQuote}</p>
+									<p class="card-text">{findSadQuote}</p>
 								</div>
 							</div>
 							<div class="card">
@@ -86,7 +84,7 @@ class Lowmood extends React.Component {
 							</div>
 						</div>
 						<hr />
-						<a class="btn btn-lg btn-info" href={'/profile/' + this.props.username} role="button">
+						<a class="btn btn-primary" href={'/profile/' + this.props.username} role="button">
 							To Dashboard
 						</a>
 					</div>
@@ -96,4 +94,4 @@ class Lowmood extends React.Component {
 	}
 }
 
-module.exports = Lowmood;
+module.exports = Lowokmood;
