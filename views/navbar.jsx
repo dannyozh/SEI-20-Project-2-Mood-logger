@@ -47,8 +47,8 @@ class Navbar extends React.Component {
 									</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-										Quote Of The Day
+									<a class="nav-link article-source quote-link" data-toggle="modal" data-target="#exampleModal">
+										Daily Article
 									</a>
 								</li>
 							</ul>
@@ -70,7 +70,10 @@ class Navbar extends React.Component {
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-body">
-									<script type="text/javascript" src="https://www.brainyquote.com/link/quotebr.js" />
+									<img class="article-image" />
+									<hr />
+									<h4 class="article-exerpt" />
+									<a class="article-link text-center" target="_blank" />
 								</div>
 							</div>
 						</div>
@@ -90,6 +93,7 @@ class Navbar extends React.Component {
 						integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 						crossorigin="anonymous"
 					/>
+					<script src="/navbar.js" />
 				</body>
 			</html>
 		);
