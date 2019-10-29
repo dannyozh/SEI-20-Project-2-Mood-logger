@@ -47,7 +47,7 @@ class Profilemorning extends React.Component {
 						<div class="row col-md-3" id="calender">
 							<p id="date">{flow.date}</p>
 						</div>
-						<div class="row col-md-8">
+						<div class="row col-md-7">
 							<div class="card-body">
 								<h4 class="card-title text-left">
 									<b>Mood: </b>
