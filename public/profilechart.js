@@ -22,16 +22,15 @@ var myChart = new Chart(ctx, {
 		]
 	},
 	options: {
-		// legend: {
-		// 	display: false
-		// },
-		// tooltips: {
-		// 	callbacks: {
-		// 		label: function(tooltipItem) {
-		// 			return tooltipItem.yLabel;
-		// 		}
-		// 	}
-		// },
+		legend: {
+			display: false
+		},
+		title: {
+			display: true,
+			text: 'Your mood logs over the past 5 days:',
+			fontColor: 'black',
+			fontSize: 14
+		},
 		elements: {
 			line: {
 				tension: 0 // disables bezier curves
@@ -41,6 +40,17 @@ var myChart = new Chart(ctx, {
 			yAxes: [
 				{
 					ticks: {
+						fontColor: '#282828',
+						stepSize: 1,
+						beginAtZero: true
+					}
+				}
+			],
+			xAxes: [
+				{
+					ticks: {
+						fontColor: '#282828',
+						stepSize: 1,
 						beginAtZero: true
 					}
 				}
