@@ -84,7 +84,7 @@ class Lowokmood extends React.Component {
 							</div>
 						</div>
 						<hr />
-						<a class="btn btn-primary" href={'/profile/' + this.props.username} role="button">
+						<a class="btn btn-primary text-center" href={'/profile/' + this.props.username} role="button">
 							To Dashboard
 						</a>
 					</div>

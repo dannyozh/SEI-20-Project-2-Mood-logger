@@ -51,7 +51,7 @@ class Okmood extends React.Component {
 				</head>
 				<Navbar />
 				<body class="body">
-					<div class="container">
+					<div class="container text-center">
 						<h3 class="text-white text-center"> Dear {this.props.username}, this is a summary of today's log.</h3>
 						<hr />
 						<div class="card-group vgr-cards">
@@ -84,7 +84,7 @@ class Okmood extends React.Component {
 							</div>
 						</div>
 						<hr />
-						<a class="btn btn-primary" href={'/profile/' + this.props.username} role="button">
+						<a class="btn btn-primary text-center" href={'/profile/' + this.props.username} role="button">
 							To Dashboard
 						</a>
 					</div>

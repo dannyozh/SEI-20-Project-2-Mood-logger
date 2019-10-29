@@ -10,7 +10,11 @@ class Goodmood extends React.Component {
 			"I, not events, have the power to make me happy or unhappy today. I can choose which it shall be. Yesterday is dead, tomorrow hasn't arrived yet. I have just one day, today, and I'm going to be happy in it. ~ Groucho Marx",
 			"I had lost my way for some time, so I need to do things that I am happy with. It's not about being the number one heroine or money. It's about doing roles that I enjoy. My biggest ambition is happiness. ~ Sonam Kapoor",
 			"It gets better: there's a light at the end of the tunnel. It may take one day, it may take ten years. But one day, you will find happiness if you manifest it. Put that energy out, and it'll come back. ~ Lil Xan",
-			'Personal health is related to self-control and to the worship of life in all its natural beauty - self-control bringing with it happiness, renewed youth, and long life. ~ Maria Montessori'
+			'Personal health is related to self-control and to the worship of life in all its natural beauty - self-control bringing with it happiness, renewed youth, and long life. ~ Maria Montessori',
+			"Some days are just bad days, that's all. You have to experience sadness to know happiness, and I remind myself that not every day is going to be a good day, that's just the way it is! ~ Dita Von Teese",
+			'Your success and happiness lies in you. Resolve to keep happy, and your joy and you shall form an invincible host against difficulties. ~ Helen Keller',
+			'Happiness lies in the joy of achievement and the thrill of creative effort. ~ Franklin D. Roosevelt',
+			'The smallest seed of faith is better than the largest fruit of happiness. ~ Henry David Thoreau'
 		];
 		var sadQuotes = [
 			'Every time you are tempted to react in the same old way, ask if you want to be a prisoner of the past or a pioneer of the future. ~ Deepak Chopra',
@@ -30,13 +34,15 @@ class Goodmood extends React.Component {
 			"You do indeed have a past, but not now! And, yes, you have a future, but not now! You can consume your now with thoughts of 'then' and 'maybe,' but that will keep you from the inner peace you could experience. ~ Wayne Dyer",
 			"We must learn how to live in the space of inner peace in our everyday lives. This takes consistent, conscious effort because I know so many black women are hurting and sad, and we don't easily express our heartache or show our wounds. ~ Susan L. Taylor",
 			"I am thankful the most important key in history was invented. It's not the key to your house, your car, your boat, your safety deposit box, your bike lock or your private community. It's the key to order, sanity, and peace of mind. The key is 'Delete.' ~ Elayne Boosler",
-			'No one is perfect... absolutely no one. Like precious stones, we have a few flaws, but why focus on that? Focus on what you like about yourself, and that will bring you happiness and peace. ~ Richard Simmons'
+			'No one is perfect... absolutely no one. Like precious stones, we have a few flaws, but why focus on that? Focus on what you like about yourself, and that will bring you happiness and peace. ~ Richard Simmons',
+			"Happiness is a choice. You can choose to be happy. There's going to be stress in life, but it's your choice whether you let it affect you or not. ~ Valerie Bertinelli"
 		];
 		var randomNumber = Math.floor(Math.random() * happyQuotes.length);
 
 		let findSadQuote = sadQuotes[randomNumber];
 		let findHappyQuote = happyQuotes[randomNumber];
 		let findResilienceQuote = resilienceQuotes[randomNumber];
+		let findHappyQuote2 = happyQuotes[randomNumber - 1];
 		return (
 			<html>
 				<head>
@@ -51,7 +57,7 @@ class Goodmood extends React.Component {
 				</head>
 				<Navbar />
 				<body class="body">
-					<div class="container">
+					<div class="container text-center">
 						<h3 class="text-white text-center"> Dear {this.props.username}, this is a summary of today's log.</h3>
 						<hr />
 						<div class="card-group vgr-cards">
@@ -70,7 +76,7 @@ class Goodmood extends React.Component {
 								</div>
 								<div class="card-body">
 									<h4 class="card-title">Feeling {this.props.feeling}</h4>
-									<p class="card-text">{findHappyQuote}</p>
+									<p class="card-text">{findHappyQuote2}</p>
 								</div>
 							</div>
 							<div class="card">
@@ -84,7 +90,7 @@ class Goodmood extends React.Component {
 							</div>
 						</div>
 						<hr />
-						<a class="btn btn-primary" href={'/profile/' + this.props.username} role="button">
+						<a class="btn btn-primary text-center" href={'/profile/' + this.props.username} role="button">
 							To Dashboard
 						</a>
 					</div>

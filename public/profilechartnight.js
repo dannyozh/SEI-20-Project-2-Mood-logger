@@ -40,7 +40,7 @@ var myChart = new Chart(ctx, {
 			yAxes: [
 				{
 					ticks: {
-						fontColor: '#000000',
+						fontColor: '#ffffff',
 						stepSize: 1,
 						beginAtZero: true
 					}
@@ -49,7 +49,7 @@ var myChart = new Chart(ctx, {
 			xAxes: [
 				{
 					ticks: {
-						fontColor: '#000000',
+						fontColor: '#ffffff',
 						stepSize: 1,
 						beginAtZero: true
 					}

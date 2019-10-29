@@ -37,11 +37,6 @@ class Navbar extends React.Component {
 									</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="/logout">
-										Logout
-									</a>
-								</li>
-								<li class="nav-item">
 									<a class="nav-link" href="/seecurrentcard">
 										Today's Log
 									</a>
@@ -49,6 +44,11 @@ class Navbar extends React.Component {
 								<li class="nav-item">
 									<a class="nav-link article-source quote-link" data-toggle="modal" data-target="#exampleModal">
 										Daily Article
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="/logout">
+										Logout
 									</a>
 								</li>
 							</ul>
