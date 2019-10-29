@@ -1,7 +1,7 @@
 var React = require('react');
 var Navbar = require('../navbar');
 
-class Rendercard extends React.Component {
+class Othermood extends React.Component {
 	render() {
 		return (
 			<html>
@@ -65,9 +65,9 @@ class Rendercard extends React.Component {
 								</div>
 							</div>
 						</div>
-						<form action={'/profile/' + this.props.username} method="POST" class="text-center">
-							<input type="submit" value="To Dashboard!" />
-						</form>
+						<a class="btn btn-primary" href={'/profile/' + this.props.username} role="button">
+							To Dashboard
+						</a>
 					</div>
 				</body>
 			</html>
@@ -75,4 +75,4 @@ class Rendercard extends React.Component {
 	}
 }
 
-module.exports = Rendercard;
+module.exports = Othermood;

@@ -11,6 +11,9 @@ module.exports = (db) => {
 			if (error) {
 				console.log(error);
 				console.log('error with rendering profile');
+			} else if (result === null) {
+				console.log('no past entries found');
+				response.render('dashboard/dashboardcreate');
 			} else {
 				// console.log('profile successfully rendered!');
 				// console.log('this is result', result);
@@ -29,7 +32,7 @@ module.exports = (db) => {
 				// find aggregate of moods
 				const add = (a, b) => a + b;
 				const sumMoods = reversedMoods.reduce(add);
-				console.log('sum of moods is', sumMoods);
+				// console.log('sum of moods is', sumMoods);
 				const aggregateMoods = sumMoods / reversedMoods.length;
 				const data = {
 					result,

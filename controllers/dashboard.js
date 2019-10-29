@@ -20,9 +20,12 @@ module.exports = (db) => {
 		const userFeelingInfo = request.body;
 		let username = request.cookies.user_name;
 		const date = request.body.date;
+		// console.log('the date is', date);
+		const modifiedDate = date.replace('2019-', '');
+		console.log('modified date is', modifiedDate);
 		const log = request.body.log;
 		// inserting into db, db needs to have a user....
-		db.userFeeling.saveUserFeeling(userFeelingInfo, username, date, log, (error, result) => {
+		db.userFeeling.saveUserFeeling(userFeelingInfo, username, modifiedDate, log, (error, result) => {
 			if (error) {
 				console.log(error);
 			} else {
@@ -46,12 +49,11 @@ module.exports = (db) => {
 			if (error) {
 				console.log('the error is', error);
 			} else if (data.mood >= 0 && data.mood < 3 && (data.feeling === 'depressed' || data.feeling === 'anxious')) {
-				console.log('rendering really low-mood page');
 				response.render('cardoutcomes/lowmood', data);
-			} else if (data.mood >= 3 && data.mood <= 5 && (data.feeling === 'ok' || data.feeling === 'stressed')) {
+			} else if (data.mood >= 3 && data.mood <= 7 && (data.feeling === 'ok' || data.feeling === 'stressed')) {
 				response.render('cardoutcomes/okmood', data);
 			} else {
-				response.render('dashboard/rendercard', data);
+				response.render('cardoutcomes/othermood', data);
 			}
 		});
 	};

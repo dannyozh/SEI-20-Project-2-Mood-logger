@@ -25,7 +25,7 @@ class Dashboardcreate extends React.Component {
 							<div class="form-group">
 								<div class="row">
 									<div class="col-md-6">
-										<input class="form-control" type="text" placeholder="Date" name="date" />
+										<input class="form-control" type="date" format="dd/mm/yyyy" placeholder="Date" name="date" />
 										<br />
 
 										<label>
@@ -46,8 +46,10 @@ class Dashboardcreate extends React.Component {
 										<br />
 										<br />
 
-										<p>Rate your mood, from poor to great:</p>
-										<input type="range" name="points" min="0" max="5" />
+										<div class="container">
+											<p>Rate your mood, on a scale from 1 to 10:</p>
+											<input type="range" name="points" min="0" max="10" />
+										</div>
 									</div>
 									<div class="col-md-6">
 										<h3>Pen your current thoughts below:</h3>

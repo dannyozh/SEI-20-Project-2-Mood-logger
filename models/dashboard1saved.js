@@ -3,10 +3,10 @@ const sha256 = require('js-sha256');
 module.exports = (dbPoolInstance) => {
 	// `dbPoolInstance` is accessible within this function scope
 
-	let saveUserFeeling = (userFeelingInfo, username, date, log, callback) => {
+	let saveUserFeeling = (userFeelingInfo, username, modifiedDate, log, callback) => {
 		console.log(userFeelingInfo);
 		console.log('hello models');
-		const arrQuery1 = [ username, userFeelingInfo.points, userFeelingInfo.illness, log, date ];
+		const arrQuery1 = [ username, userFeelingInfo.points, userFeelingInfo.illness, log, modifiedDate ];
 
 		const query1 = `INSERT INTO dailylogs (users_name, mood_level, illness_input, log, date) VALUES($1, $2, $3, $4, $5) RETURNING *`;
 

@@ -1,23 +1,20 @@
 var React = require('react');
 var Navbar = require('../navbar');
 
-class Profile extends React.Component {
+class Profilemorning extends React.Component {
 	render() {
 		let moods = this.props.moods;
 		let jData = JSON.stringify(moods);
-		// console.log('jdata is', jData);
-
-		// function to put insight box
+		// put mood in box
 		let moodAggValue = this.props.aggregateMoods;
-		console.log('mood aggregate is', moodAggValue);
 		let insightFunction = function(moodAggValue) {
-			if (moodAggValue >= 0 && moodAggValue <= 1.5) {
+			if (moodAggValue >= 0 && moodAggValue <= 3) {
 				return (
 					<div class="boxed col-md-8" id="insight-form">
 						<p>Your mood is low</p>
 					</div>
 				);
-			} else if (moodAggValue > 1.5 && moodAggValue <= 3.5) {
+			} else if (moodAggValue > 4 && moodAggValue <= 7) {
 				return (
 					<div class="boxed col-md-8" id="insight-form">
 						<p>Your mood is ok</p>
@@ -31,25 +28,26 @@ class Profile extends React.Component {
 				);
 			}
 		};
+
 		let allcardsArr = this.props.result;
 		// console.log('this is allcards arr', allcardsArr);
 		let allcards = allcardsArr.map((flow) => {
 			return (
 				<div class="card">
 					<div class="row no-gutters" id="card-size">
-						<div class="col-md-4" id="calender">
+						<div class="row col-sd-3" id="calender">
 							<p id="date">{flow.date}</p>
 						</div>
-						<div class="col-md-7">
+						<div class="row col-sd-7">
 							<div class="card-body">
-								<h5 class="card-title">
+								<h4 class="card-title">
 									<b>Mood: </b>
 									{flow.mood_level}
-								</h5>
-								<p class="card-text">
+								</h4>
+								<h6 class="card-text">
 									<b>Feelings: </b>
 									{flow.illness_input}
-								</p>
+								</h6>
 								<p class="card-text">
 									<b>Log: </b>
 									{flow.log}
@@ -78,34 +76,39 @@ class Profile extends React.Component {
 					/>
 					<link rel="stylesheet" href="/profilemorning.css" type="text/css" />
 					<link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js" />
+					<link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet" />
+					<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
 				</head>
-				<Navbar username={this.props.username} />
+
 				<body class="body">
-					<div class="container text-center">
-						<h1 class="header text-white">Good Morning {this.props.username}!</h1>
-						<hr />
-						<br />
-						<div class="container float-left col-md-7">
-							<canvas id="myChart" />
-							<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" />
-							<script
-								dangerouslySetInnerHTML={{
-									__html: `var allmoods = ${jData};
+					<Navbar username={this.props.username} />
+					<div class="container" id="main-container">
+						<div class="container text-center">
+							<h1 class="header text-white">Good Morning {this.props.username}!</h1>
+							<hr />
+							<br />
+							<div class="row float-left col-md-7">
+								<canvas id="myChart" />
+								<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" />
+								<script
+									dangerouslySetInnerHTML={{
+										__html: `var allmoods = ${jData};
 									var alldates = ${ddata}`
-								}}
-							/>
-							<script src="/profilechart.js" />
-							<div class="container">
-								<div class="row">
-									<span class="dot">
-										<p class="circle-text">{moodAggValue}</p>
-									</span>
-									{insightFunction(moodAggValue)}
+									}}
+								/>
+								<script src="/profilechart.js" />
+								<div class="container">
+									<div class="row">
+										<span class="dot">
+											<p class="circle-text">{moodAggValue}</p>
+										</span>
+										{insightFunction(moodAggValue)}
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="row float-right col-md-4" id="main-row">
-							<span>{allcards}</span>
+							<div class="row float-right col-md-5" id="main-row">
+								<span>{allcards}</span>
+							</div>
 						</div>
 					</div>
 				</body>
@@ -114,4 +117,4 @@ class Profile extends React.Component {
 	}
 }
 
-module.exports = Profile;
+module.exports = Profilemorning;

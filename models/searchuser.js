@@ -18,11 +18,11 @@ module.exports = (dbPoolInstance) => {
 			} else {
 				// invoke callback function with results after query has executed
 				if (queryResult.rows.length > 0) {
-					console.log('this is queryresult', queryResult.rows);
+					// console.log('this is queryresult', queryResult.rows);
 					callback(null, queryResult.rows);
 				} else {
 					callback(null, null);
-					console.log('registered user found inside DATA BASESESE');
+					// console.log('registered user found inside DATA BASESESE');
 				}
 			}
 		});

@@ -26,12 +26,12 @@ class Landingpage extends React.Component {
 						<div class="container">
 							<div class="row justify-content-center">
 								<div class="col-4">
-									<form method="POST" action="/register">
+									<form action="/register">
 										<button class="btn btn-info">New User</button>
 									</form>
 								</div>
 								<div class="col-4">
-									<form mothod="POST" action="/login">
+									<form action="/login">
 										<button class="btn btn-info">Existing User</button>
 									</form>
 								</div>
