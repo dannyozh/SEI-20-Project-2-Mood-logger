@@ -96,7 +96,7 @@ class Profileafternoon extends React.Component {
 					<Navbar username={this.props.username} />
 					<div class="container" id="main-container">
 						<div class="container text-center">
-							<h1 class="header text-white">Good Afternoon! {this.props.username}!</h1>
+							<h1 class="header text-white">Good Afternoon, {this.props.username}!</h1>
 							<hr />
 							<br />
 							<div class="row float-left col-md-7">

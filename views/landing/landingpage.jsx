@@ -15,7 +15,7 @@ class Landingpage extends React.Component {
 				</head>
 				<body class="body">
 					<div class="container text-center text-white">
-						<h1>Welcome to Moodlooger</h1>
+						<h1>Welcome to Moodlogger</h1>
 						<hr />
 						<img
 							src="https://cdn.shopify.com/s/files/1/0969/9128/products/Claude_Monet_-_Poppy_Field_at_Argenteuil_3a201822-b9d1-48a0-ae14-c28b01fcfbb5_large.jpg?v=1510384836"

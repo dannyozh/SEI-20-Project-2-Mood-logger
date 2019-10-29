@@ -16,7 +16,7 @@ class Loginpage extends React.Component {
 				</head>
 				<body class="body">
 					<div class="container text-center text-white">
-						<h1>Welcome to Moodlooger</h1>
+						<h1>Welcome to Moodlogger</h1>
 						<hr />
 						<h3>Login Below:</h3>
 						<br />
