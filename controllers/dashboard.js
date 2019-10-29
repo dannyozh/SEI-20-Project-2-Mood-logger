@@ -48,12 +48,18 @@ module.exports = (db) => {
 			};
 			if (error) {
 				console.log('the error is', error);
+				// highly depressed or anxious
 			} else if (data.mood >= 0 && data.mood < 3 && (data.feeling === 'depressed' || data.feeling === 'anxious')) {
 				response.render('cardoutcomes/lowmood', data);
-			} else if (data.mood >= 3 && data.mood <= 7 && (data.feeling === 'ok' || data.feeling === 'stressed')) {
+				// mood ok but not feeling great
+			} else if (data.mood >= 3 && data.mood <= 7 && (data.feeling === 'stressed' || data.feeling === 'depressed' || data.feeling === 'anxious')) {
+				response.render('cardoutcomes/lowokmood', data);
+				// mood ok but feeling ok
+			} else if (data.mood >= 3 && data.mood <= 7 && data.feeling === 'ok') {
 				response.render('cardoutcomes/okmood', data);
+				// person is doing better
 			} else {
-				response.render('cardoutcomes/othermood', data);
+				response.render('cardoutcomes/goodmood', data);
 			}
 		});
 	};
