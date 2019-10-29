@@ -26,7 +26,7 @@ html,
 }
 
 #main-row {
-	overflow: scroll;
+	overflow-y: scroll;
 	max-height: 465px;
 	min-width: 200px;
 }
