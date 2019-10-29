@@ -17,7 +17,7 @@ class Profileafternoon extends React.Component {
 						</p>
 					</div>
 				);
-			} else if (moodAggValue > 4 && moodAggValue <= 7) {
+			} else if (moodAggValue >= 4 && moodAggValue <= 7) {
 				return (
 					<div class="boxed col-md-8" id="insight-form">
 						<p class="insight-text">
@@ -26,7 +26,7 @@ class Profileafternoon extends React.Component {
 						</p>
 					</div>
 				);
-			} else {
+			} else if (moodAggValue >= 8) {
 				return (
 					<div class="boxed col-md-8" id="insight-form">
 						<p class="insight-text">

@@ -26,7 +26,7 @@ class Profileevening extends React.Component {
 						</p>
 					</div>
 				);
-			} else {
+			} else if (moodAggValue >= 8) {
 				return (
 					<div class="boxed col-md-8" id="insight-form">
 						<p class="insight-text">
