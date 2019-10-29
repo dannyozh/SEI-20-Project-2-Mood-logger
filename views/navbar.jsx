@@ -41,6 +41,11 @@ class Navbar extends React.Component {
 										Logout
 									</a>
 								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="/seecurrentcard">
+										Today's Log
+									</a>
+								</li>
 							</ul>
 							<ul class="navbar-nav ml-auto nav-flex-icons">
 								<li class="nav-item avatar">
