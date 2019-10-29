@@ -33,7 +33,7 @@ module.exports = (db) => {
 				const add = (a, b) => a + b;
 				const sumMoods = reversedMoods.reduce(add);
 				// console.log('sum of moods is', sumMoods);
-				const aggregateMoods = sumMoods / reversedMoods.length;
+				const aggregateMoods = (sumMoods / reversedMoods.length).toFixed(1);
 				const data = {
 					result,
 					username: usercookie,
