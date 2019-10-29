@@ -6,15 +6,15 @@ var myChart = new Chart(ctx, {
 		labels: alldates,
 		datasets: [
 			{
-				label: 'Your mood level over the past 5 days:',
+				label: 'Mood Level over the past 5 days:',
 				data: allmoods,
 				backgroundColor: [
-					'rgb(255, 99, 132)',
-					'rgb(54, 162, 235)',
-					'rgb(255, 206, 86)',
-					'rgb(75, 192, 192)',
-					'rgb(153, 102, 255)',
-					'rgb(255, 159, 64)'
+					'rgb(255, 99, 132, 0.4)',
+					'rgb(54, 162, 235, 0.4)',
+					'rgb(255, 206, 86, 0.4)',
+					'rgb(75, 192, 192, 0.4)',
+					'rgb(153, 102, 255, 0.4)',
+					'rgb(255, 159, 64, 0.4)'
 				],
 				borderColor: [ 'rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 206, 86)', 'rgb(75, 192, 192)', 'rgb(153, 102, 255)', 'rgb(255, 159, 64)' ],
 				borderWidth: 2

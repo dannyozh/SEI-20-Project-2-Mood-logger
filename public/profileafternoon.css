@@ -22,22 +22,27 @@ html,
 
 #myChart {
 	height: 200px;
-	width: 50%;
+	width: 60%;
 }
 
 #main-row {
 	overflow: scroll;
-	max-height: 495px;
-	max-width: 320px;
+	max-height: 465px;
+	min-width: 200px;
+}
+
+#card-size {
+	min-width: 400px;
+	background-color: #fadfad;
 }
 
 #calender {
-	max-height: 55px;
-	max-width: 55px;
+	max-height: 80px;
+	min-width: 120px;
 	position: relative;
 	margin: 1.5em;
 	padding: 10px 20px;
-	background: #f8f8f8;
+	background: #f0c25b;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border-radius: 5px;
@@ -46,9 +51,15 @@ html,
 	text-align: center;
 }
 
+#date-box {
+	min-height: 2000px;
+}
 #date {
-	text-orientation: mixed;
-	font-size: 10px;
+	margin-top: 14%;
+	margin-left: 4%;
+	font-size: 25px;
+	font-weight: bold;
+	font-family: 'Lato', sans-serif;
 }
 
 .no-gutters {
@@ -67,9 +78,9 @@ html,
 .circle-text {
 	margin-top: 20%;
 	font-family: 'Staatliches', cursive;
-	font-size: 50px;
+	font-size: 55px;
 	font-weight: bold;
-	color: linear-gradient(#f0c25b, #4b1248);
+	color: #bbc4dd;
 }
 
 #insight-form {
@@ -77,4 +88,9 @@ html,
 	margin-left: 3%;
 	background: linear-gradient(#ee9ca7, #ffdde1);
 	min-height: 100px;
+}
+
+.insight-text {
+	font-family: 'Roboto Condensed', sans-serif;
+	margin-top: 5%;
 }

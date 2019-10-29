@@ -11,19 +11,28 @@ class Profilemorning extends React.Component {
 			if (moodAggValue >= 0 && moodAggValue <= 3) {
 				return (
 					<div class="boxed col-md-8" id="insight-form">
-						<p>Your mood is low</p>
+						<p class="insight-text">
+							Your mood seems to be on the low side these past days. To lift your spirits, try activities such as taking a long walk, listening to
+							soothing music or watching an enjoyable film.
+						</p>
 					</div>
 				);
 			} else if (moodAggValue > 4 && moodAggValue <= 7) {
 				return (
 					<div class="boxed col-md-8" id="insight-form">
-						<p>Your mood is ok</p>
+						<p class="insight-text">
+							It looks like you've been feeling just fine of late. Remember to get your daily dosage of exercise, and to incorporate spaces of
+							mindfulness within your day.
+						</p>
 					</div>
 				);
 			} else {
 				return (
 					<div class="boxed col-md-8" id="insight-form">
-						<p>You're feeling better. Great!!</p>
+						<p class="insight-text">
+							You're mental well-being seems to be in rude health. There will be days ahead on which you'll feel down or just ok, but hold on to
+							this memory of positivity when the waters inevitably get choppy.
+						</p>
 					</div>
 				);
 			}
@@ -35,20 +44,20 @@ class Profilemorning extends React.Component {
 			return (
 				<div class="card">
 					<div class="row no-gutters" id="card-size">
-						<div class="row col-sd-3" id="calender">
+						<div class="row col-md-3" id="calender">
 							<p id="date">{flow.date}</p>
 						</div>
-						<div class="row col-sd-7">
+						<div class="row col-md-8">
 							<div class="card-body">
-								<h4 class="card-title">
+								<h4 class="card-title text-left">
 									<b>Mood: </b>
 									{flow.mood_level}
 								</h4>
-								<h6 class="card-text">
+								<h6 class="card-text text-left">
 									<b>Feelings: </b>
 									{flow.illness_input}
 								</h6>
-								<p class="card-text">
+								<p class="card-text text-left">
 									<b>Log: </b>
 									{flow.log}
 								</p>
@@ -78,6 +87,7 @@ class Profilemorning extends React.Component {
 					<link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js" />
 					<link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet" />
 					<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
+					<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet" />
 				</head>
 
 				<body class="body">
