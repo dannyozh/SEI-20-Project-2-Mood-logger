@@ -8,7 +8,7 @@ class Profilemorning extends React.Component {
 		// put mood in box
 		let moodAggValue = this.props.aggregateMoods;
 		let insightFunction = function(moodAggValue) {
-			if ((moodAggValue = 0 && moodAggValue <= 3)) {
+			if (moodAggValue < 4) {
 				return (
 					<div class="boxed col-md-8" id="insight-form">
 						<p class="insight-text">
@@ -17,7 +17,7 @@ class Profilemorning extends React.Component {
 						</p>
 					</div>
 				);
-			} else if (moodAggValue > 3 && moodAggValue <= 7) {
+			} else if (moodAggValue >= 4 && moodAggValue < 7) {
 				return (
 					<div class="boxed col-md-8" id="insight-form">
 						<p class="insight-text">
@@ -26,7 +26,7 @@ class Profilemorning extends React.Component {
 						</p>
 					</div>
 				);
-			} else {
+			} else if (moodAggValue >= 7) {
 				return (
 					<div class="boxed col-md-8" id="insight-form">
 						<p class="insight-text">
