@@ -27,7 +27,7 @@ var myChart = new Chart(ctx, {
 		},
 		title: {
 			display: true,
-			text: 'Your mood logs over the past 5 days:',
+			text: 'Your past mood logs at a glance:',
 			fontColor: 'white',
 			fontSize: 20
 		},
