@@ -1,9 +1,9 @@
 #Project 2 - Mood logger ((link: https://mysterious-cove-50978.herokuapp.com/))
 
-A journal-like app that helps promote mental well-being for people, especially for those who deal with depression, anxiety and stress. 
+A journal-like app that helps promote mental well-being for users, especially for those who deal with depression, anxiety and stress. 
 
-Enables user to track their moods and offer tailored recommendations –like meditation apps, calming music and helpful web resources – depending on user input. Also included is a daily log that lets you pen down your thoughts. 
+Enables user to track their moods and log their thoughts. Based on daily mood score and feelings, app will supply inspirational quotes as well as an 'insight' based on user's aggregate mood score over the last 5 entries.
 
-Logs are presented in home page, which shows your mood graph and your last recorded log, a mood journal if you will.
+Logs are presented in home page, which not only shows your mood graph and mood insight, but your past few logs as well.
 
 
