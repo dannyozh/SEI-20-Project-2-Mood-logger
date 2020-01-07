@@ -21,7 +21,8 @@ module.exports = (db) => {
         let username = request.cookies.user_name;
         const date = request.body.date;
         // console.log('the date is', date);
-        const modifiedDate = date.replace('2020-', '');
+        // const modifiedDate = date.replace('2020-', '');
+        const modifiedDate = date.slice(5);
         console.log('modified date is', modifiedDate);
         const log = request.body.log;
         // inserting into db, db needs to have a user....
