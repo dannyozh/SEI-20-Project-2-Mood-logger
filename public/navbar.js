@@ -11,7 +11,7 @@ document.querySelector('.quote-link').addEventListener('click', function() {
 const doFetch = function() {
     var url =
         'https://newsapi.org/v2/everything?' +
-        'q=anxiety+depression+insomnia&' +
+        'q=mental-health+anti-depressants+insomnia&' +
         'from=2019&' +
         'sortBy=popularity&' +
         'apiKey=e82f9a5a23af468a9cb2d3dc934d84c4';
