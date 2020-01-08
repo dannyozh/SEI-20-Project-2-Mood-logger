@@ -1,3 +1,5 @@
+# Moodlogger
+
 ## Description
 
 A journal-like app that helps promote mental well-being for users, especially for those who deal with depression, anxiety and stress. 
