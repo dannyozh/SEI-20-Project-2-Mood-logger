@@ -4,22 +4,6 @@
 
 A journal-like app that helps promote mental well-being for users, especially for those who deal with depression, anxiety and stress. 
 
-## Getting Started
-
-1. Install all the ruby gems of the project is using
-`
-bundle install
-`
-
-2. Create the Postgres db for running on local
-`
-rails db:create
-`
-3. Create the tables neccessary to run this project
-`
-rails db:migrate
-`
-
 ## Built With
 
 * Node.js
